@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "pw"
+version = "0.1.0"
+description = ""
+authors = ["Tobi DEGNON <tobidegnon@proton.me>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+coltrane = { extras = ["mistune"], version = "^0.24.0" }
+django-htmx = "^1.14.0"
+mistune = "3.0.0rc4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
