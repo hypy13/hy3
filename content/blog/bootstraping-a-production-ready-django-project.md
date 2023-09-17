@@ -1,6 +1,6 @@
 ---
 share: True
-featured: True
+featured: False
 title: Bootstraping a production-ready django project
 slug: bootstraping-a-production-ready-django-project
 tags:
