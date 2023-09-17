@@ -1,5 +1,16 @@
 [
   {
+    "created": "2023-09-16T09:19:56.442Z",
+    "name": "sse-relay-server",
+    "description": "Originally designed for Django, now a simple, standalone Server-Sent Events relay service, ideal for Django projects seeking straightforward real-time capabilities without the need for Daphne and async Django setup.",
+    "stack": "Starlette",
+    "company": "Open Source",
+    "web_url": "https://github.com/Tobi-De/sse_relay_server",
+    "github_url": "",
+    "featured": true,
+    "active": true
+  },
+  {
     "created": "2022-10-29T09:19:56.442Z",
     "modified": "2022-10-29T15:55:20.793Z",
     "name": "Facture Express",
