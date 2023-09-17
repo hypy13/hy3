@@ -1,7 +1,7 @@
 ---
 share: false
 title: Exploring SSE and PostgreSQL for Real-time Communication in Django
-slug: Exploring SSE and PostgreSQL for Realtime Communication in Django
+slug: exploring_sse_and_postgresql_for_realtime_communication_in_django
 tags:
   - python
   - django
