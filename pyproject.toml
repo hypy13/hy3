@@ -11,6 +11,16 @@ python = "^3.11"
 coltrane = { extras = ["mistune"], version = "^0.24.0" }
 django-htmx = "^1.16.0"
 mistune = "^3.0.1"
+pytailwindcss = "^0.2.0"
+poethepoet = "^0.22.1"
+
+
+[tool.poe.tasks.t]
+cmd = "tailwindcss -i static/css/input.css -o static/css/output.css --watch"
+help = "Compile tailwind in watch mode"
+
+[tool.poe.tasks.r]
+cmd = "coltrane record --output docs --force"
 
 
 [build-system]

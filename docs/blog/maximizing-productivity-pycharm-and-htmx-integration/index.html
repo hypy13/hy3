@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Tobi DEGNON">
     
-    <title>Exploring SSE and PostgreSQL for Real-time Communication in Django</title>
-    <meta name="description" content="Discover how we improved our Django project&#x27;s realtime notification system by leveraging Server-Sent Events (SSE) and PostgreSQL LISTEN/NOTIFY.">
-    <meta name="keywords" content="python, django, sse, postgresql, starlette">
+    <title>Maximizing Productivity: PyCharm and htmx Integration</title>
+    <meta name="description" content="Throughout this quick guide, we will see how to add htmx support (documentation and autocompletion) in pycharm.">
+    <meta name="keywords" content="django, htmx, pycharm">
 
     <link rel="stylesheet" href="/static/css/output.css">
     <link rel="stylesheet" href="/static/css/code.css">
@@ -30,7 +30,7 @@
 </head>
 <body class="container mx-auto bg-zinc-900 text-zinc-50" hx-boost="true" hx-ext="head-support">
 <header>
-    <nav class="md:flex md:justify-center mt-4" x-data="{ isOpen: false, path: '/blog/exploring_sse_and_postgresql_for_realtime_communication_in_django'}">
+    <nav class="md:flex md:justify-center mt-4" x-data="{ isOpen: false, path: '/blog/maximizing-productivity-pycharm-and-htmx-integration'}">
         <div class="flex justify-end m-4 p-4 md:hidden">
             <button
                     type="button"
@@ -80,35 +80,88 @@
 
             <header class="mb-4">
                 <!-- fixme when this will be a datetime, put the isoformat value -->
-                <time datetime="Sept. 16, 2023, midnight"
+                <time datetime="Nov. 5, 2022, midnight"
                     class="order-first flex items-center text-base text-zinc-400 dark:text-zinc-500"><span
                         class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
-                    <span class="ml-3">Sept. 16, 2023</span></time>
+                    <span class="ml-3">Nov. 5, 2022</span></time>
                 <h1 class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-                    Exploring SSE and PostgreSQL for Real-time Communication in Django
+                    Maximizing Productivity: PyCharm and htmx Integration
                 </h1>
                 
-                <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">Discover how we improved our Django project&#x27;s realtime notification system by leveraging Server-Sent Events (SSE) and PostgreSQL LISTEN/NOTIFY.</p>
+                <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">Throughout this quick guide, we will see how to add htmx support (documentation and autocompletion) in pycharm.</p>
             </header>
             <blockquote>
-  <p><strong>TL;DR</strong>: In this article, I explore how we built a relay system to serve real-time notifications to our Django project using Server-Sent Events (SSE) and PostgreSQL LISTEN/NOTIFY. Check out the final project on GitHub <a rel="nofollow" href="https://github.com/Tobi-De/sse_relay_server">here</a>. 🚀</p>
+  <p><strong>TL;DR</strong> Learn how to add support for htmx in PyCharm for seamless development using <a rel="nofollow" href="https://github.com/JetBrains/web-types#web-types">web-types</a>.</p>
 </blockquote>
 
-<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/b6esukxv1aw2io3jbr7p.png" alt="sse relay transmission diagram" /></p>
+<p>If you're not familiar with htmx, check out this fantastic <a rel="nofollow" href="https://www.youtube.com/watch?v=Ula0c_rZ6gk">htmx + Django introduction</a> by <a rel="nofollow" href="https://www.bugbytes.io/">BugBytes</a>.</p>
 
-<p>Recently, at my workplace, I was tasked with creating a real-time notification system for one of our Django projects. I opted for <a rel="nofollow" href="https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events">Server-Sent Events</a> (SSE). Luckily for me, around that time Django 4.2 introduced async iterators support for StreamingHttpResponse, which seemed ideal. However, as I delved deeper into the project, I decided instead to build a relay service using <a rel="nofollow" href="https://github.com/Tobi-De/sse_server_postgres_listen_notify">Starlette</a> which transmits messages received through the PostgreSQL LISTEN/NOTIFY protocol to client browsers connected via SSE.</p>
+<h3 id="introduction">Introduction</h3>
 
-<p>It all began with an excellent post on <a rel="nofollow" href="https://valberg.dk/django-sse-postgresql-listen-notify.html">Writing a chat application in Django 4.2 using async StreamingHttpResponse, Server-Sent Events, and PostgreSQL LISTEN/NOTIFY</a>. I read the post and successfully applied the concepts. This wasn't my first encounter with the PostgreSQL LISTEN/NOTIFY protocol; I knew that tools like Procrastinate (a Python task queue) also used it. This protocol was appealing because it eliminated the need to introduce additional infrastructure like Redis into our setup since we were already using PostgreSQL as our database. In the end, what I did added an extra service to our setup, but I think it was worth it, even just for the idea it sparked.</p>
+<p><a rel="nofollow" href="https://htmx.org/">htmx</a> is my go-to frontend tool for building web applications, and <a rel="nofollow" href="https://www.jetbrains.com/pycharm/">PyCharm from JetBrains</a> is my daily code editor/IDE. Unfortunately, by default, PyCharm doesn't recognize htmx attributes when used in templates, resulting in ugly warning lines 🙁.  This article will guide you on how to resolve this issue and improve your development workflow.</p>
 
-<p>Initially, the setup worked seamlessly. Notifications were correctly transmitted and received. We switched from using Gunicorn to Daphne to run the project, and everything seemed fine. However, after a while, a colleague noticed that our server was constantly receiving requests on our SSE async view. It turned out that the connection was consistently disrupted, causing the browser to repeatedly attempt reconnection. This ultimately led to our PostgreSQL database sporadically crashing with an error message stating "too many clients."</p>
+<h3 id="the-fix">The Fix</h3>
 
-<p>At this point, we did something that, now that I think of it, makes absolutely no sense. We split our Django server into two instances: one running in WSGI mode with Gunicorn, and the other under Daphne in ASGI mode. It did not resolve the issue, maybe we did that thinking it would mitigate the issue. Who knows. However, it did provide me with an idea – replacing the Django app running under Daphne with something better suited for asynchronous operations.</p>
+<p>There's a simple way to add autocompletion and documentation for htmx attributes in JetBrains editors using <a rel="nofollow" href="https://github.com/JetBrains/web-types#web-types">web-types</a>. Web-types is a JSON-based format that provides IDEs with metadata information about web component libraries like htmx. I stumbled upon this tip via <a rel="nofollow" href="https://twitter.com/sponsfreixes/status/1573725414643535872">this tweet</a>, so kudos to the author for sharing it!</p>
 
-<p>I ended up creating a relay using <a rel="nofollow" href="https://www.starlette.io">Starlette</a>, which transmitted messages received through the PostgreSQL <a rel="nofollow" href="https://www.postgresql.org/docs/current/sql-listen.html">LISTEN</a>/<a rel="nofollow" href="https://www.postgresql.org/docs/15/sql-notify.html">NOTIFY</a> protocol to client browsers connected via SSE (The diagram above). This solution proved to be more stable and reliable than the Django approach. Furthermore, it allowed me to simplify the original Django project by completely removing the ASGI setup and code from the project. I was not very fond of the idea of mixing and matching sync and asynchronous code anyway, so this was a win for me. For a straightforward communication method via SSE in Django, this approach worked pretty well.</p>
+<h3 id="step-by-step-guide">Step-by-Step Guide</h3>
 
-<p>I've noticed several repositories on GitHub exploring similar ideas. I'm curious about its long-term viability 🤔, but for now, it works pretty well with our setup. After all, we only need the async stuff for real-time notifications. It was not worth turning our entire project into ASGI just for that. Plus, we can easily use the relay for some other precise and simple stuff in the project like updating charts, etc.</p>
+<ul>
+<li><p><strong>Create a <code>package.json</code> File</strong></p>
 
-<p>Thanks for reading! I've turned the relay project into a package and a Docker image; you can check it out at <a rel="nofollow" href="https://github.com/Tobi-De/sse_relay_server">https://github.com/Tobi-De/sse_relay_server</a>.</p>
+<p>Start by creating a <code>package.json</code> file, the central configuration file for Node.js-based applications. Although we're not building a Node.js package, this is the method to reference web-types in your PyCharm project. Ensure you have Node.js installed on your computer. If not, I recommend using <a rel="nofollow" href="https://github.com/nvm-sh/nvm">nvm</a> to install it. After installing Node.js, you can use <code>npm</code> (included with all Node.js installations) to initialize a Node.js project and generate the <code>package.json</code> file.</p>
+
+<p></p></li>
+</ul>
+
+<div class="codehilite">
+<pre><span></span><code><span class="w">   </span>npm<span class="w"> </span>init<span class="w"> </span>-y
+<span class="w">  </span>
+</code></pre>
+</div>
+
+
+<ul>
+<li><p><strong>Create <code>htmx.web-types.json</code> File</strong></p>
+
+<p>Create a new file named <code>htmx.web-types.json</code> and copy the htmx <a rel="nofollow" href="https://github.com/bigskysoftware/htmx/blob/master/editors/jetbrains/htmx.web-types.json">web-types source</a> into it:</p>
+
+<p></p></li>
+</ul>
+
+<div class="codehilite">
+<pre><span></span><code><span class="w">   </span>touch<span class="w"> </span>htmx.web-types.json
+<span class="w">  </span>
+</code></pre>
+</div>
+
+
+<ul>
+<li><p><strong>Update <code>package.json</code></strong></p>
+
+<p>Add a new entry to your <code>package.json</code> with "web-types" as the key and the path to your <code>htmx.web-types.json</code> file as the value. Here's an example:</p>
+
+<p></p></li>
+</ul>
+
+<div class="codehilite">
+<pre><span></span><code><span class="w">   </span><span class="p">{</span>
+<span class="w">     </span><span class="nt">&quot;web-types&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./htmx.web-types.json&quot;</span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">  </span>
+</code></pre>
+</div>
+
+
+<ul>
+<li><p><strong>Enjoy Autocompletion and Documentation</strong></p>
+
+<p>Now, in your HTML templates, type an htmx attribute like <code>hx-get</code>, and you should see autocompletion and documentation directly accessible in your IDE. Cool, right? 😎</p></li>
+</ul>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>With this simple setup, you can enhance your PyCharm experience and work seamlessly with htmx attributes in your Django projects. Happy coding!</p>
 
         </article>
     </div>
