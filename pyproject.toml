@@ -8,11 +8,14 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-coltrane = {git = "https://github.com/Tobi-De/coltrane.git"}
+coltrane = { git = "https://github.com/Tobi-De/coltrane.git" }
 django-htmx = "^1.16.0"
 mistune = "^3.0.1"
 pytailwindcss = "^0.2.0"
 poethepoet = "^0.22.1"
+minestrone = "^0.6.2"
+python-frontmatter = "^1.0.0"
+pygments = "^2.16.1"
 
 
 [tool.poe.tasks.t]
