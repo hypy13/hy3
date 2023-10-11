@@ -57,17 +57,17 @@ After reading and re-reading the Django documentation, things started to click. 
 
 There are two important concepts that Django uses: the "default time zone" and the "current time zone."
 
-- The "default time zone" is the timezone you set in your Django settings via `TIME_ZONE`.
-- The "current time zone" is the timezone used for rendering. It's the one in which your users will browse your site.
+- The **default time zone** is the timezone you set in your Django settings via `TIME_ZONE`.
+- The **current time zone** is the timezone used for rendering. It's the one in which your users will browse your site.
 
-The "current time zone" defaults to the "default time zone" unless you **activate** the user's specific timezone using `django.utils.timezone.activate`.
+The `current time zone` defaults to the `default time zone` unless you **activate** the user's specific timezone using `django.utils.timezone.activate`.
 
 Does it start to make sense?
 Django, by default, doesn't know a user's timezone. It's not typically available in request data, so it sticks with the default timezone. You need to ask your users for their time zone – a simple form does the trick – and then manually activate it. The easiest and probably the best way to do this is through a middleware.
 
 ### Setting Up Multi-Timezone Support
 
-Now, let's dive into a simple example. We'll create a user `Profile` model to collect and store each user's timezone. For simplicity, we'll focus on the essentials.
+Now, let's dive into a simple example. We'll create a user `Profile` model to collect and store each user's timezone. For simplicity's sake, I'll leave out the non-essential parts of the code.
 
 Here's a model for our users' profiles:
 
@@ -132,10 +132,6 @@ MIDDLEWARE = [
 
 With this setup, we've made sure that every call to `timezone.now` will takes the user's specific timezone into account. When datetime objects are saved to the database, they are automatically converted to UTC. For example, in my case (UTC+1), if I input "6:00 pm" on the UI to record a time, it will be saved in the database as `5:00 pm` (though it will still be rendered as "6:00 pm" to me on the frontend).
 
-### Conclusion
-
-There you have it! Your Django app is now fully equipped to support multiple timezones. Thanks for embarking on this timezone adventure with me!
-
 ### Quick Tips and bits:
 
 If you need to create a timezone-aware datetime object manually, for example by combining a date and time, here's how you do it:
@@ -181,4 +177,9 @@ class Migration(migrations.Migration):
     ]
 ```
 
+
+### Conclusion
+
+There you have it! Your Django app is now fully equipped to support multiple timezones.
 I hope this article adds a touch of timezone magic to your Django projects.
+Thanks for the read.
