@@ -85,7 +85,7 @@
                     datetime="2022-09-05">
                     <span class="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
                         <span class="h-4 w-0.5 rounded-full bg-zinc-500"></span>
-                    </span>{{ post.publish_date|naturalday }}
+                    </span>{{ post.publish_date }}
                 </time>
                 <h5 class="mb-2 text-2xl font-bold tracking-tight">{{ post.title }}</h5>
                 <p class="font-normal text-zinc-400">{{ post.description|truncatewords:20 }}</p>
