@@ -58,7 +58,7 @@
                                     <p class="mb-5 text-zinc-400">{{ post.description }}</p>
                                     <div class="flex items-center justify-between">
                                        <span class="text-sm text-zinc-500">Published <time
-                                               datetime="{{ post.publish_date.isoformat }}">{{ post.publish_date|naturalday }}</time></span>
+                                               datetime="{{ post.publish_date.isoformat }}">{{ post.publish_date }}</time></span>
                                         <a
                                                 class="inline-flex items-center font-medium text-teal-400 hover:underline"
                                                 href="/{{ post.slug }}/">Read more
