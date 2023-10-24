@@ -1,42 +1,39 @@
 [
   {
-    "created": "2023-09-16T09:19:56.442Z",
+    "last_updated": "2023-09-16",
     "name": "sse-relay-server",
     "description": "Originally designed for Django, now a simple, standalone Server-Sent Events relay service, ideal for Django projects seeking straightforward real-time capabilities without the need for Daphne and async Django setup.",
     "stack": "Starlette",
     "company": "Open Source",
-    "web_url": "https://github.com/Tobi-De/sse_relay_server",
-    "github_url": "",
+    "web_url": "",
+    "github_url": "https://github.com/Tobi-De/sse_relay_server",
     "featured": true,
     "active": true
   },
   {
-    "created": "2022-10-29T09:19:56.442Z",
-    "modified": "2022-10-29T15:55:20.793Z",
+    "last_updated": "2022-10-29",
     "name": "Facture Express",
     "description": "Online service for the payment of household bills, rent, water, electricity, etc. The service has been suspended in favor of the official service built by our government.",
     "stack": "Django",
     "company": "E-DEV",
     "web_url": "http://facture-express.com",
     "github_url": "",
-    "featured": true,
+    "featured": false,
     "active": true
   },
   {
-    "created": "2022-10-29T09:29:49.234Z",
-    "modified": "2022-10-29T15:59:06.956Z",
+    "last_updated": "2022-10-29",
     "name": "Izimanage",
     "description": "A multi tenant customer relationship management (CRM)  and accounting system for small to medium-sized businesses. Tenants are managed via postgres schemas.",
     "stack": "Django",
     "company": "E-DEV",
     "web_url": "http://izimanage.com",
     "github_url": "",
-    "featured": true,
+    "featured": false,
     "active": true
   },
   {
-    "created": "2022-10-29T09:32:21.883Z",
-    "modified": "2022-11-06T07:46:06.697Z",
+    "last_updated": "2022-11-06",
     "name": "cookiecutter-fastapi",
     "description": "A Cookiecutter template for fastapi projects, inspired by cookiecutter-django. My first experience trying to build a cookiecutter, one of the most boring things I've worked on.",
     "stack": "python",
@@ -47,8 +44,7 @@
     "active": true
   },
   {
-    "created": "2022-10-29T09:35:27.036Z",
-    "modified": "2022-10-29T16:02:32.596Z",
+    "last_updated": "2023-09-28",
     "name": "dj-shop-cart",
     "description": "A handy cart manager for django projects. This package can be used for more than just e-commerce, it works for anything that involves a shopping cart mechanism, not just shopping carts.",
     "stack": "Python",
@@ -59,8 +55,7 @@
     "active": true
   },
   {
-    "created": "2022-10-29T09:37:15.173Z",
-    "modified": "2022-10-29T17:17:15.224Z",
+    "last_updated": "2022-10-29",
     "name": "fastapi-users-tortoise",
     "description": "Tortoise orm database adapter for fastapi-users v10 and above. Tortoise ORM is the best ORM I've found \r\noutside the django world and fastapi-users the best authentication system for fastapi.",
     "stack": "Python",
@@ -71,8 +66,7 @@
     "active": true
   },
   {
-    "created": "2022-10-29T09:39:02.700Z",
-    "modified": "2022-10-29T17:06:10.328Z",
+    "last_updated": "2022-10-29",
     "name": "jenova",
     "description": "My little experiment to try to build a full stack web framework.",
     "stack": "Python",
@@ -83,8 +77,7 @@
     "active": true
   },
   {
-    "created": "2022-10-29T09:39:47.694Z",
-    "modified": "2022-10-29T16:13:15.141Z",
+    "last_updated": "2022-10-29",
     "name": "qosic-sdk",
     "description": "This is my first python package and it gave me a taste of how the python package ecosystem works.\r\nIt is a simple python wrapper around a payment API of a local business.",
     "stack": "Python",
@@ -95,8 +88,7 @@
     "active": true
   },
   {
-    "created": "2022-10-29T09:46:27.226Z",
-    "modified": "2022-10-29T17:25:39.949Z",
+    "last_updated": "2022-10-29",
     "name": "Fwellbeing",
     "description": "An e-commerce platform for the sale of health care products, soaps, candles and ointments. This project is still a work in progress.",
     "stack": "Django",
@@ -107,8 +99,7 @@
     "active": true
   },
   {
-    "created": "2022-10-29T09:48:37.104Z",
-    "modified": "2022-10-29T16:19:53.501Z",
+    "last_updated": "2022-10-29",
     "name": "portfolio",
     "description": "My first attempt at building a personal website and also my first experience with the django rest framework (DRF) and docker (via Caprover) . Fustrated by the design, I threw the project away less than a month after putting it online.",
     "stack": "Django",
@@ -119,8 +110,7 @@
     "active": true
   },
   {
-    "created": "2022-10-29T09:49:43.296Z",
-    "modified": "2022-10-29T17:06:58.478Z",
+    "last_updated": "2022-10-29",
     "name": "projects-api",
     "description": "A simple API that allows you to save and query your projects. An experiment to try out deta.sh.",
     "stack": "FastAPI",
@@ -131,8 +121,7 @@
     "active": true
   },
   {
-    "created": "2022-10-29T10:11:55.983Z",
-    "modified": "2022-10-29T17:30:11.194Z",
+    "last_updated": "2022-10-29",
     "name": "smsdrop-python",
     "description": "The official python sdk for the smsdop API. Easily send single or batch sms via python objects.",
     "stack": "Python",
@@ -143,8 +132,7 @@
     "active": true
   },
   {
-    "created": "2022-10-29T10:15:40.644Z",
-    "modified": "2022-10-29T16:45:08.501Z",
+    "last_updated": "2022-10-29",
     "name": "pgbackup",
     "description": "A CLI program to automate postgresql database backups. For the moment, this project is suspended since I mainly use django-dbbackup from the jazzband team.",
     "stack": "Typer",
@@ -155,8 +143,7 @@
     "active": true
   },
   {
-    "created": "2022-10-29T10:17:06.216Z",
-    "modified": "2022-10-29T16:33:16.893Z",
+    "last_updated": "2022-10-29",
     "name": "smsdrop",
     "description": "A json based API to send sms campaigns. My first production fastapi application. The project was merged with Bepaid as a secondary service.",
     "stack": "FastAPI",
@@ -167,8 +154,7 @@
     "active": true
   },
   {
-    "created": "2022-10-29T10:21:14.446Z",
-    "modified": "2022-10-31T10:54:30.447Z",
+    "last_updated": "2022-10-31",
     "name": "MailingTide",
     "description": "A SAAS platform for managing emailing and sms campaigns. It provides an integrated editor (TinyMCE) and a dashboard for campaign tracking. The emails were managed with amazon SES. The project involved a lot of data processing / cleaning of CSV and Excel files since users could import their contact list.",
     "stack": "Django",
@@ -179,20 +165,18 @@
     "active": true
   },
   {
-    "created": "2022-10-29T10:34:17.714Z",
-    "modified": "2022-10-29T16:04:20.942Z",
+    "last_updated": "2023-10-24",
     "name": "Personal website",
     "description": "The site you are currently on. It's a porfolio to showcase my work and also a blog where I can keep a recipe/tutorial on the things I'm learning, it's my way of learning in public.",
     "stack": "Django",
     "company": "Personal",
     "web_url": "https://oluwatobi.dev",
     "github_url": "https://github.com/Tobi-De/dotfm",
-    "featured": true,
+    "featured": false,
     "active": true
   },
   {
-    "created": "2022-11-22T08:30:53.046Z",
-    "modified": "2022-12-06T08:00:14.427Z",
+    "last_updated": "2023-10-12",
     "name": "fuzzy-couscous",
     "description": "A cli tool to bootstrap your django projects and enhance your development experience.",
     "stack": "Python",

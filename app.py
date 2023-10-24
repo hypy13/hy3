@@ -2,7 +2,7 @@
 
 from django.core.management import execute_from_command_line
 
-from coltrane import initialize, DEFAULT_INSTALLED_APPS
+from coltrane import initialize
 
 
 wsgi = initialize()

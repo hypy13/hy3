@@ -8,6 +8,7 @@
 
 
 {% block content %}
+{% get_projects as projects %}
     <main class="md:px-8 mt-16">
         <div class="mx-auto max-w-7xl lg:px-8">
             <div class="px-4 lg:px-12">
@@ -28,7 +29,7 @@
                         </p>
                     </header>
                     <div class="mt-20 grid  xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 my-4 py-4">
-                        {% for project in data.projects %}
+                        {% for project in projects %}
                             <div class="col-span-1 border shadow-md border-zinc-700 p-4 rounded-lg">
                                 <div class="flex items-center justify-between">
                                     <span class="text-sm font-light text-zinc-400">{{ project.company }}</span>
