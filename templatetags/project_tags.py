@@ -11,7 +11,6 @@ register = template.Library()
 @register.simple_tag(name="get_projects")
 def get_projects() -> list[dict[str, str]]:
     projects = get_data()["projects"]
-    print(projects)
     for project in projects:
         project["last_updated"] = parse(project["last_updated"])
         project["featured"] = project["featured"] == "true"

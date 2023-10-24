@@ -1,5 +1,16 @@
 [
   {
+    "last_updated": "2023-10-24",
+    "name": "leerming",
+    "description": "Leerming is an open-source Django-based web app that follows the Leitner box method. Create flashcards effortlessly from PDFs, videos, and web links. Supercharge your learning experience.",
+    "stack": "Django",
+    "company": "Open Source",
+    "web_url": "https://leerming.com",
+    "github_url": "https://github.com/Tobi-De/leerming",
+    "featured": true,
+    "active": true
+  },
+  {
     "last_updated": "2023-09-16",
     "name": "sse-relay-server",
     "description": "Originally designed for Django, now a simple, standalone Server-Sent Events relay service, ideal for Django projects seeking straightforward real-time capabilities without the need for Daphne and async Django setup.",
