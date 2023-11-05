@@ -28,6 +28,7 @@ jobs:
           git config --global user.email "tobidegnon@proton.me"
           git config --global user.name "Tobi DEGNON"
           git diff --quiet || (git add data/projects.json && git commit -m "Updated projects.json with latest commit dates")
+          git pull --rebase
           git push
 
   build-with-coltrane:
