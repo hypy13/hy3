@@ -31,4 +31,3 @@ I ended up creating a relay using [Starlette](https://www.starlette.io), which t
 I've noticed several repositories on GitHub exploring similar ideas. I'm curious about its long-term viability 🤔, but for now, it works pretty well with our setup. After all, we only need the async stuff for real-time notifications. It was not worth turning our entire project into ASGI just for that. Plus, we can easily use the relay for some other precise and simple stuff in the project like updating charts, etc.
 
 Thanks for reading! I've turned the relay project into a package and a Docker image; you can check it out at [https://github.com/Tobi-De/sse_relay_server](https://github.com/Tobi-De/sse_relay_server).
-

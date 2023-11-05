@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Tobi DEGNON">
-    
+
     <title>Easy database and migrations reset during development</title>
     <meta name="description" content="Remove all your django migrations files with one commmand.">
     <meta name="keywords" content="django, python">
@@ -87,10 +87,10 @@
                 <h1 class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
                     Easy database and migrations reset during development
                 </h1>
-                
+
                 <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">Remove all your django migrations files with one commmand.</p>
             </header>
-            
+
 <div class="codehilite">
 <pre><span></span><code>touch<span class="w"> </span>rm_migrations.py
 </code></pre>
@@ -101,27 +101,27 @@
 
 
 <div class="codehilite">
-<pre><span></span><code><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>  
+<pre><span></span><code><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>  
-    <span class="n">apps_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;django_apps&quot;</span>  
-    <span class="n">excludes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;__init__.py&quot;</span><span class="p">]</span>  
-    <span class="n">apps</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>  
-    <span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">apps_dir</span><span class="o">.</span><span class="n">iterdir</span><span class="p">():</span>  
-        <span class="n">migration_dir</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">/</span> <span class="s2">&quot;migrations&quot;</span>  
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">migration_dir</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>  
-            <span class="k">continue</span>        
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">migration_dir</span><span class="o">.</span><span class="n">iterdir</span><span class="p">():</span>  
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">&quot;.py&quot;</span> <span class="ow">and</span> <span class="n">file</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excludes</span><span class="p">:</span>  
-                <span class="n">file</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>  
-                <span class="n">apps</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">folder</span><span class="p">))</span>  
-                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="si">}</span><span class="s2"> deleted&quot;</span><span class="p">)</span>  
-    <span class="n">res</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">apps</span><span class="p">)</span>  
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Removed migration files for apps: </span><span class="se">\n</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">apps_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;django_apps&quot;</span>
+    <span class="n">excludes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;__init__.py&quot;</span><span class="p">]</span>
+    <span class="n">apps</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">apps_dir</span><span class="o">.</span><span class="n">iterdir</span><span class="p">():</span>
+        <span class="n">migration_dir</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">/</span> <span class="s2">&quot;migrations&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">migration_dir</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+            <span class="k">continue</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">migration_dir</span><span class="o">.</span><span class="n">iterdir</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">suffix</span> <span class="o">==</span> <span class="s2">&quot;.py&quot;</span> <span class="ow">and</span> <span class="n">file</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excludes</span><span class="p">:</span>
+                <span class="n">file</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+                <span class="n">apps</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">folder</span><span class="p">))</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="si">}</span><span class="s2"> deleted&quot;</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">apps</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Removed migration files for apps: </span><span class="se">\n</span><span class="si">{</span><span class="n">res</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>  
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </code></pre>
 </div>
@@ -162,7 +162,7 @@ Add this line to your<code>.gitignore</code> file:</p>
 </div>
 
 
-<p>In the development phase, when the project idea is not fully formed or the product requirements are continually changing, it is common to completely rewrite or modify (in a non-migratable way) your django models, which requires cleaning up and recreating all your migration files. If your project consists of more than a few applications, deleting the files by hand is quite annoying. 
+<p>In the development phase, when the project idea is not fully formed or the product requirements are continually changing, it is common to completely rewrite or modify (in a non-migratable way) your django models, which requires cleaning up and recreating all your migration files. If your project consists of more than a few applications, deleting the files by hand is quite annoying.
 With the above script, you can easily in one command delete all your migration files 😎.</p>
 
 <p>To reset my database (drop and recreate) I use the command below provided by the <a rel="nofollow" href="https://django-extensions.readthedocs.io/en/latest/reset_db.html">django-extensions</a> package.</p>

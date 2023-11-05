@@ -9,14 +9,17 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 coltrane = { git = "https://github.com/Tobi-De/coltrane.git" }
-django-htmx = "^1.16.0"
-mistune = "^3.0.1"
+django-htmx = "^1.17.0"
+mistune = "^3.0.2"
 pytailwindcss = "^0.2.0"
-poethepoet = "^0.22.1"
-minestrone = "^0.6.2"
+poethepoet = "^0.24.2"
+minestrone = "^0.7.0"
 python-frontmatter = "^1.0.0"
 pygments = "^2.16.1"
 
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.5.0"
 
 [tool.poe.tasks.t]
 cmd = "tailwindcss -i static/css/input.css -o static/css/output.css --watch"
