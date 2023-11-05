@@ -63,6 +63,5 @@ jobs:
         run: |-
           git config --global user.email "tobidegnon@proton.me"
           git config --global user.name "Tobi DEGNON"
-          git diff --quiet || (git add docs/* && git commit -m "build static site")
-          git pull --rebase
+          git diff --quiet || (git add docs/* output.json && git commit -m "build static site" && git pull --rebase)
           git push
