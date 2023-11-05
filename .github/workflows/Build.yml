@@ -61,8 +61,8 @@ jobs:
 
       - name: Commit and push if docs folder content changed
         run: |-
-          git pull --rebase
           git config --global user.email "tobidegnon@proton.me"
           git config --global user.name "Tobi DEGNON"
           git diff --quiet || (git add docs/* && git commit -m "build static site")
+          git pull --rebase
           git push
