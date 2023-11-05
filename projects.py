@@ -8,10 +8,10 @@ import os
 
 def get_github_token():
     if not Path(".env").exists():
-        return os.getenv("GITHUB_API_TOKEN")
+        return os.getenv("GH_API_TOKEN")
     content = Path(".env").read_text()
     for line in content.splitlines():
-        if line.startswith("GITHUB_API_TOKEN="):
+        if line.startswith("GH_API_TOKEN="):
             return line.split("=")[1]
 
 
