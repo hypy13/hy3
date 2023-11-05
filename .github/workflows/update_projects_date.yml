@@ -18,6 +18,9 @@ jobs:
             python-version: 3.9
 
       - name: Update projects.json
+        with:
+          env:
+            GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
         run: |-
           python projects.py update-dates
 
