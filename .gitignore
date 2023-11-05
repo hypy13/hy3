@@ -132,3 +132,5 @@ dmypy.json
 .idea/*
 
 node_modules
+
+templatetags/__pycache__/*
