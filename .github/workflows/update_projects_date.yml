@@ -1,0 +1,30 @@
+name: Update projects dates
+on:
+  schedule: # Run workflow automatically
+    - cron: '30 8 */2 * *'
+  workflow_dispatch: # Run workflow manually (without waiting for the cron to be called), through the GitHub Actions Workflow page directly
+
+jobs:
+  update-readme-with-blog:
+    name: Update this repo's data/projects.json file with each project latest date
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+            python-version: 3.9
+
+      - name: Update projects.json
+        run: |-
+          python projects.py update-dates
+
+      - name: Commit and push if README changed
+        run: |-
+          git diff
+          git config --global user.email "tobidegnon@proton.me"
+          git config --global user.name "Tobi DEGNON"
+          git diff --quiet || (git add README.md && git commit -m "Updated projects.json with latest commit dates")
+          git push

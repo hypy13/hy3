@@ -56,7 +56,9 @@ def update_dates():
         commits = github_api_request(f"repos/Tobi-De/{repo_name}/commits")
         last_update = commits[0]["commit"]["author"]["date"]
         last_update_date = last_update.split("T")[0]
-        project["last_updated"] = last_update_date
+        if project.get("last_updated") != last_update_date:
+            print(f"Updating {project['name']}")
+            project["last_updated"] = last_update_date
 
     with open('data/projects.json', 'w') as file:
         json.dump(projects, file)
