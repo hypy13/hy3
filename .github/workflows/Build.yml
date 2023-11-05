@@ -17,6 +17,12 @@ jobs:
         with:
           python-version: 3.11
 
+      - name: Pull and rebase before any work
+        run: |-
+          git config --global user.email "tobidegnon@proton.me"
+          git config --global user.name "Tobi DEGNON"
+          git pull --rebase
+
       - shell: bash
         env:
           GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
@@ -25,10 +31,7 @@ jobs:
 
       - name: Commit and push if projects.json changed
         run: |-
-          git config --global user.email "tobidegnon@proton.me"
-          git config --global user.name "Tobi DEGNON"
           git diff --quiet || (git add data/projects.json && git commit -m "Updated projects.json with latest commit dates")
-          git pull --rebase
           git push
 
   build-with-coltrane:
@@ -56,6 +59,12 @@ jobs:
         run: |
           python -m pip install -r requirements.txt
 
+      - name: Pull and rebase before any work
+        run: |-
+          git config --global user.email "tobidegnon@proton.me"
+          git config --global user.name "Tobi DEGNON"
+          git pull --rebase
+
       - name: Run Coltrane record
         run: |-
           coltrane record --output docs --force --threads 2
@@ -68,8 +77,5 @@ jobs:
 
       - name: Commit and push if docs folder content changed
         run: |-
-          git config --global user.email "tobidegnon@proton.me"
-          git config --global user.name "Tobi DEGNON"
           git diff --quiet || (git add docs/* output.json && git commit -m "build static site")
-          git pull --rebase
           git push
