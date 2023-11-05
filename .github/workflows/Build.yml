@@ -57,7 +57,7 @@ jobs:
 
       - name: Run Coltrane record
         run: |-
-          coltrane record --output docs --force
+          coltrane record --output docs --force --threads 2
 
       - name: Commit and push if docs folder content changed
         run: |-
