@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Tobi DEGNON">
-
+    
     <title>Bootstraping a production-ready django project</title>
     <meta name="description" content="If you have some experience with django and feel that the django django-admin startproject command is too light for you, then cookiecuter-django might be just what you are looking for.">
     <meta name="keywords" content="python, django, cookiecutter, project-template">
@@ -87,7 +87,7 @@
                 <h1 class="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
                     Bootstraping a production-ready django project
                 </h1>
-
+                
                 <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">If you have some experience with django and feel that the django django-admin startproject command is too light for you, then cookiecuter-django might be just what you are looking for.</p>
             </header>
             <p>Through this guide, we will see how to start a new django project using a <a rel="nofollow" href="https://github.com/cookiecutter/cookiecutter">cookiecutter</a>. This guide is intended for beginners and intermediate level devs who already have experience with django and want a ready to use production grade setup for their django projects.
@@ -131,7 +131,7 @@ cookiecutter<span class="w"> </span>https://github.com/cookiecutter/cookiecutter
 
 <h2 id="generate-a-project-using-cookiecutter-django">Generate a project using cookiecutter-django</h2>
 
-<p>The default values are in brackets, if you see a blank line, then I used the default value by pressing the <strong>Enter</strong> key. Throughout the article I have included many links to other articles to help understand what I can't go into here, but don't feel obligated to follow each link every time, or you may never get through it 😅. I suggest you read the entire article at least once, then revisit it by following the links that interest you. </p>
+<p>The default values are in brackets, if you see a blank line, then I used the default value by pressing the <strong>Enter</strong> key. Throughout the article I have included many links to other articles to help understand what I can't go into here, but don't feel obligated to follow each link every time, or you may never get through it 😅. I suggest you read the entire article at least once, then revisit it by following the links that interest you.</p>
 
 <h3 id="installation">Installation</h3>
 
@@ -155,7 +155,7 @@ description<span class="w"> </span><span class="o">[</span>Behold<span class="w"
 author_name<span class="w"> </span><span class="o">[</span>Daniel<span class="w"> </span>Roy<span class="w"> </span>Greenfeld<span class="o">]</span>:<span class="w"> </span>John<span class="w"> </span>Doe
 domain_name<span class="w"> </span><span class="o">[</span>example.com<span class="o">]</span>:<span class="w"> </span>ushopify.com
 email<span class="w"> </span><span class="o">[</span>john-doe@example.com<span class="o">]</span>:<span class="w"> </span>doe@ushopify.com
-version<span class="w"> </span><span class="o">[</span><span class="m">0</span>.1.0<span class="o">]</span>:<span class="w"> </span>
+version<span class="w"> </span><span class="o">[</span><span class="m">0</span>.1.0<span class="o">]</span>:
 Select<span class="w"> </span>open_source_license:
 <span class="m">1</span><span class="w"> </span>-<span class="w"> </span>MIT
 <span class="m">2</span><span class="w"> </span>-<span class="w"> </span>BSD
@@ -277,13 +277,13 @@ For a step-by-step guide on how to configure static and media files serving your
 
 <p>This statement is from the <a rel="nofollow" href="https://cookiecutter-django.readthedocs.io/en/latest/project-generation-options.html">cookiecutter-django official documentation</a>.
 If you are not sure what it means, there is a high chance you don't need it, skip it.
-If you want to know more about websocket in django, read <a rel="nofollow" href="https://dev.to/alexoleshkevich/websockets-in-django-3-1-532o">this</a>. </p>
+If you want to know more about websocket in django, read <a rel="nofollow" href="https://dev.to/alexoleshkevich/websockets-in-django-3-1-532o">this</a>.</p>
 
 <h3 id="django-rest-framework">Django rest framework</h3>
 
 
 <div class="codehilite">
-<pre><span></span><code>use_drf<span class="w"> </span><span class="o">[</span>n<span class="o">]</span>:<span class="w"> </span>
+<pre><span></span><code>use_drf<span class="w"> </span><span class="o">[</span>n<span class="o">]</span>:
 </code></pre>
 </div>
 
@@ -316,7 +316,7 @@ If you want to know more about these tools, check out their official documentati
 
 
 <div class="codehilite">
-<pre><span></span><code>use_celery<span class="w"> </span><span class="o">[</span>n<span class="o">]</span>:<span class="w"> </span>
+<pre><span></span><code>use_celery<span class="w"> </span><span class="o">[</span>n<span class="o">]</span>:
 </code></pre>
 </div>
 
@@ -382,7 +382,7 @@ If you are using a similar deployment method based on a procfile like <a href=/h
 <span class="m">2</span><span class="w"> </span>-<span class="w"> </span>Travis
 <span class="m">3</span><span class="w"> </span>-<span class="w"> </span>Gitlab
 <span class="m">4</span><span class="w"> </span>-<span class="w"> </span>Github
-Choose<span class="w"> </span>from<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">]</span>:<span class="w"> </span>
+Choose<span class="w"> </span>from<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">]</span>:
 </code></pre>
 </div>
 
@@ -393,7 +393,7 @@ Choose<span class="w"> </span>from<span class="w"> </span><span class="m">1</spa
 
 
 <div class="codehilite">
-<pre><span></span><code>keep_local_envs_in_vcs<span class="w"> </span><span class="o">[</span>y<span class="o">]</span>:<span class="w"> </span>
+<pre><span></span><code>keep_local_envs_in_vcs<span class="w"> </span><span class="o">[</span>y<span class="o">]</span>:
 </code></pre>
 </div>
 
@@ -405,7 +405,7 @@ If on the current option you type <strong>n</strong>, both folder will be kept o
 
 
 <div class="codehilite">
-<pre><span></span><code>debug<span class="w"> </span><span class="o">[</span>n<span class="o">]</span>:<span class="w"> </span>
+<pre><span></span><code>debug<span class="w"> </span><span class="o">[</span>n<span class="o">]</span>:
 </code></pre>
 </div>
 
