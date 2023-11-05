@@ -8,14 +8,14 @@ import os
 
 def get_github_token():
     if not Path(".env").exists():
-        return os.getenv("GITHUB_TOKEN")
+        return os.getenv("GITHUB_API_TOKEN")
     content = Path(".env").read_text()
     for line in content.splitlines():
-        if line.startswith("GITHUB_TOKEN="):
+        if line.startswith("GITHUB_API_TOKEN="):
             return line.split("=")[1]
 
 
-GITHUB_TOKEN = get_github_token()
+GITHUB_API_TOKEN = get_github_token()
 OPEN_SOURCE = "Open Source"
 
 
@@ -34,7 +34,7 @@ class Project(TypedDict):
 
 def github_api_request(path: str) -> dict:
     url = f"https://api.github.com/{path}"
-    headers = {"Authorization": f"Bearer {GITHUB_TOKEN}"}
+    headers = {"Authorization": f"Bearer {GITHUB_API_TOKEN}"}
     request = urllib.request.Request(url, headers=headers)
     response = urllib.request.urlopen(request)
     return json.load(response)
