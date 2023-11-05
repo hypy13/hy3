@@ -1,6 +1,6 @@
 [
   {
-    "last_updated": "2023-10-24",
+    "last_updated": "2023-11-04",
     "name": "leerming",
     "description": "Leerming is an open-source Django-based web app that follows the Leitner box method. Create flashcards effortlessly from PDFs, videos, and web links. Supercharge your learning experience.",
     "stack": "Django",
@@ -8,7 +8,8 @@
     "web_url": "https://leerming.com",
     "github_url": "https://github.com/Tobi-De/leerming",
     "featured": true,
-    "active": true
+    "active": true,
+    "private": false
   },
   {
     "last_updated": "2023-09-16",
@@ -19,7 +20,8 @@
     "web_url": "",
     "github_url": "https://github.com/Tobi-De/sse_relay_server",
     "featured": true,
-    "active": true
+    "active": true,
+    "private": false
   },
   {
     "last_updated": "2022-10-29",
@@ -27,10 +29,11 @@
     "description": "Online service for the payment of household bills, rent, water, electricity, etc. The service has been suspended in favor of the official service built by our government.",
     "stack": "Django",
     "company": "E-DEV",
-    "web_url": "http://facture-express.com",
-    "github_url": "",
+    "web_url": "",
+    "github_url": "https://github.com/EdevTech/facturexpress",
     "featured": false,
-    "active": true
+    "active": false,
+    "private": true
   },
   {
     "last_updated": "2022-10-29",
@@ -38,13 +41,14 @@
     "description": "A multi tenant customer relationship management (CRM)  and accounting system for small to medium-sized businesses. Tenants are managed via postgres schemas.",
     "stack": "Django",
     "company": "E-DEV",
-    "web_url": "http://izimanage.com",
-    "github_url": "",
+    "web_url": "",
+    "github_url": "https://github.com/EdevTech/izimanage",
     "featured": false,
-    "active": true
+    "active": false,
+    "private": true
   },
   {
-    "last_updated": "2022-11-06",
+    "last_updated": "2023-04-15",
     "name": "cookiecutter-fastapi",
     "description": "A Cookiecutter template for fastapi projects, inspired by cookiecutter-django. My first experience trying to build a cookiecutter, one of the most boring things I've worked on.",
     "stack": "python",
@@ -52,7 +56,8 @@
     "web_url": "https://cookiecutter-fastapi.readthedocs.io/en/latest/",
     "github_url": "https://github.com/Tobi-De/cookiecutter-fastapi",
     "featured": true,
-    "active": true
+    "active": true,
+    "private": false
   },
   {
     "last_updated": "2023-09-28",
@@ -63,10 +68,11 @@
     "web_url": "https://tobi-de.github.io/dj-shop-cart/",
     "github_url": "https://github.com/tobi-de/dj-shop-cart",
     "featured": true,
-    "active": true
+    "active": true,
+    "private": false
   },
   {
-    "last_updated": "2022-10-29",
+    "last_updated": "2022-08-08",
     "name": "fastapi-users-tortoise",
     "description": "Tortoise orm database adapter for fastapi-users v10 and above. Tortoise ORM is the best ORM I've found \r\noutside the django world and fastapi-users the best authentication system for fastapi.",
     "stack": "Python",
@@ -74,10 +80,11 @@
     "web_url": "https://tobi-de.github.io/fastapi-users-tortoise/",
     "github_url": "https://github.com/tobi-de/fastapi-users-tortoise",
     "featured": false,
-    "active": true
+    "active": true,
+    "private": false
   },
   {
-    "last_updated": "2022-10-29",
+    "last_updated": "2023-11-05",
     "name": "jenova",
     "description": "My little experiment to try to build a full stack web framework.",
     "stack": "Python",
@@ -85,10 +92,11 @@
     "web_url": "",
     "github_url": "https://github.com/Tobi-De/jenova",
     "featured": false,
-    "active": true
+    "active": true,
+    "private": false
   },
   {
-    "last_updated": "2022-10-29",
+    "last_updated": "2023-10-23",
     "name": "qosic-sdk",
     "description": "This is my first python package and it gave me a taste of how the python package ecosystem works.\r\nIt is a simple python wrapper around a payment API of a local business.",
     "stack": "Python",
@@ -96,40 +104,44 @@
     "web_url": "https://qosic-sdk.readthedocs.io/en/latest/",
     "github_url": "https://github.com/Tobi-De/qosic-sdk",
     "featured": false,
-    "active": true
+    "active": true,
+    "private": false
   },
   {
     "last_updated": "2022-10-29",
     "name": "Fwellbeing",
     "description": "An e-commerce platform for the sale of health care products, soaps, candles and ointments. This project is still a work in progress.",
     "stack": "Django",
-    "company": "Personal",
+    "company": "FemyBienEtre",
     "web_url": "https://www.femybienetre.com",
-    "github_url": "",
+    "github_url": "https://github.com/Tobi-De/fwellbeing",
     "featured": false,
-    "active": true
+    "active": true,
+    "private": true
   },
   {
     "last_updated": "2022-10-29",
     "name": "portfolio",
-    "description": "My first attempt at building a personal website and also my first experience with the django rest framework (DRF) and docker (via Caprover) . Fustrated by the design, I threw the project away less than a month after putting it online.",
+    "description": "My first attempt at building a personal website and also my first experience with the django rest framework (DRF) and docker (via Caprover) . Frustrated by the design, I threw the project away less than a month after putting it online.",
     "stack": "Django",
-    "company": "Personal",
+    "company": "Open Source",
     "web_url": "",
     "github_url": "https://github.com/Tobi-De/portfolio",
     "featured": false,
-    "active": true
+    "active": false,
+    "private": false
   },
   {
     "last_updated": "2022-10-29",
     "name": "projects-api",
     "description": "A simple API that allows you to save and query your projects. An experiment to try out deta.sh.",
     "stack": "FastAPI",
-    "company": "Personal",
+    "company": "Open Source",
     "web_url": "",
     "github_url": "https://github.com/Tobi-De/projects-api",
     "featured": false,
-    "active": true
+    "active": false,
+    "private": false
   },
   {
     "last_updated": "2022-10-29",
@@ -140,7 +152,8 @@
     "web_url": "https://edevtech.github.io/smsdrop-python/",
     "github_url": "https://github.com/EdevTech/smsdrop-python",
     "featured": false,
-    "active": true
+    "active": false,
+    "private": false
   },
   {
     "last_updated": "2022-10-29",
@@ -151,7 +164,8 @@
     "web_url": "",
     "github_url": "https://github.com/Tobi-De/pgbackup/tree/dev",
     "featured": false,
-    "active": true
+    "active": false,
+    "private": false
   },
   {
     "last_updated": "2022-10-29",
@@ -160,9 +174,10 @@
     "stack": "FastAPI",
     "company": "E-DEV",
     "web_url": "",
-    "github_url": "",
+    "github_url": "https://github.com/EdevTech/smsdrop",
     "featured": false,
-    "active": true
+    "active": false,
+    "private": true
   },
   {
     "last_updated": "2022-10-31",
@@ -171,30 +186,33 @@
     "stack": "Django",
     "company": "E-DEV",
     "web_url": "",
-    "github_url": "",
+    "github_url": "https://github.com/Tobi-De/mailingtide",
     "featured": false,
-    "active": true
+    "active": false,
+    "private": true
   },
   {
-    "last_updated": "2023-10-24",
+    "last_updated": "2023-11-05",
     "name": "Personal website",
-    "description": "The site you are currently on. It's a porfolio to showcase my work and also a blog where I can keep a recipe/tutorial on the things I'm learning, it's my way of learning in public.",
+    "description": "The site you are currently on. It's a portfolio to showcase my work and also a blog where I can keep a recipe/tutorial on the things I'm learning, it's my way of learning in public.",
     "stack": "Django",
-    "company": "Personal",
+    "company": "Open Source",
     "web_url": "https://oluwatobi.dev",
-    "github_url": "https://github.com/Tobi-De/dotfm",
+    "github_url": "https://github.com/Tobi-De/pw",
     "featured": false,
-    "active": true
+    "active": true,
+    "private": false
   },
   {
-    "last_updated": "2023-10-12",
+    "last_updated": "2023-10-13",
     "name": "fuzzy-couscous",
     "description": "A cli tool to bootstrap your django projects and enhance your development experience.",
     "stack": "Python",
-    "company": "Open source",
+    "company": "Open Source",
     "web_url": "https://tobi-de.github.io/fuzzy-couscous",
     "github_url": "https://github.com/Tobi-De/fuzzy-couscous",
     "featured": true,
-    "active": true
+    "active": true,
+    "private": false
   }
 ]
