@@ -33,7 +33,7 @@ jobs:
 
   build-with-coltrane:
     name: Build static site with coltrane
-    needs: [update-projects-with-latest-dates]
+    needs: [ update-projects-with-latest-dates ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -47,10 +47,10 @@ jobs:
       - uses: actions/cache@v2
         name: Configure pip caching
         with:
-            path: ~/.cache/pip
-            key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-            restore-keys: |
-              ${{ runner.os }}-pip-
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
       - name: Install Python dependencies
         run: |
@@ -59,6 +59,12 @@ jobs:
       - name: Run Coltrane record
         run: |-
           coltrane record --output docs --force --threads 2
+        env:
+          COLTRANE_SITE_URL: ${{ vars.COLTRANE_SITE_URL }}
+          ALLOWED_HOSTS: ${{ vars.ALLOWED_HOSTS }}
+          COLTRANE_DESCRIPTION: ${{ vars.COLTRANE_DESCRIPTION }}
+          COLTRANE_TITLE: ${{ vars.COLTRANE_TITLE }}
+          DEBUG: ${{ vars.DEBUG }}
 
       - name: Commit and push if docs folder content changed
         run: |-
