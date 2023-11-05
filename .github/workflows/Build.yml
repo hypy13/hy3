@@ -55,12 +55,13 @@ jobs:
         run: |
           python -m pip install -r requirements.txt
 
-      - name: Update README
+      - name: Run Coltrane record
         run: |-
           coltrane record --output docs --force
 
       - name: Commit and push if docs folder content changed
         run: |-
+          git pull --rebase
           git config --global user.email "tobidegnon@proton.me"
           git config --global user.name "Tobi DEGNON"
           git diff --quiet || (git add docs/* && git commit -m "build static site")
