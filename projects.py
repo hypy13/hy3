@@ -1,9 +1,12 @@
 import argparse
 import json
+import os
+import re
+import urllib.request
 from pathlib import Path
 from typing import TypedDict
-import urllib.request
-import os
+
+project_file_path = Path("data/projects.json")
 
 
 def get_github_token():
@@ -40,8 +43,8 @@ def github_api_request(path: str) -> dict:
     return json.load(response)
 
 
-def update_dates():
-    with open('data/projects.json') as file:
+def update_dates(_):
+    with open(project_file_path) as file:
         projects: list[Project] = json.load(file)
 
     need_update = [
@@ -60,29 +63,74 @@ def update_dates():
             print(f"Updating {project['name']}")
             project["last_updated"] = last_update_date
 
-    with open('data/projects.json', 'w') as file:
+    with open(project_file_path, "w") as file:
         json.dump(projects, file)
 
 
-def add_project():
-    # TODO: Implement the logic for the add-project command
-    pass
+def add_project(args):
+    project_name = args.project_name
+    dry_run = args.dry_run
+
+    try:
+        github_project = github_api_request(f"repos/Tobi-De/{project_name}")
+    except urllib.error.HTTPError:
+        print(f"Project {project_name} does not exist")
+        exit(1)
+
+    with open(project_file_path, "r") as file:
+        projects = json.load(file)
+
+    web_url = input("Enter web url: ") or ""
+    featured = input("Is this project featured? (y/n): ") == "y"
+    stack = input("Enter stack: ")
+
+    project = {
+        "last_updated": github_project["pushed_at"].split("T")[0],
+        "name": project_name,
+        "description": github_project["description"],
+        "stack": stack,
+        "company": OPEN_SOURCE,
+        "web_url": web_url,
+        "github_url": github_project["html_url"],
+        "featured": featured,
+        "active": True,
+        "private": False,
+    }
+
+    projects.append(project)
+
+    if dry_run:
+        from pprint import pprint
+
+        pprint(projects)
+        exit(0)
+
+    with open(project_file_path, "w") as file:
+        json.dump(projects, file)
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Make update to my projects')
-    subparsers = parser.add_subparsers(dest='command')
+    parser = argparse.ArgumentParser(description="Make update to my projects")
+    subparsers = parser.add_subparsers(dest="command")
 
-    update_dates_parser = subparsers.add_parser('update-dates', help='Update dates command')
+    update_dates_parser = subparsers.add_parser(
+        "update-dates", help="Update dates command"
+    )
     update_dates_parser.set_defaults(func=update_dates)
 
-    add_project_parser = subparsers.add_parser('add-project', help='Add project command')
+    add_project_parser = subparsers.add_parser(
+        "add-project", help="Add project command"
+    )
+    add_project_parser.add_argument(
+        "project_name", type=str, help="Name of the project"
+    )
+    add_project_parser.add_argument("--dry-run", action="store_true", help="Dry run")
     add_project_parser.set_defaults(func=add_project)
 
     args = parser.parse_args()
-    if hasattr(args, 'func'):
-        args.func()
+    if hasattr(args, "func"):
+        args.func(args)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
