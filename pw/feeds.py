@@ -43,9 +43,7 @@ class ContentFeed(Feed):
         if site_url.endswith("/"):
             site_url = site_url[:-1]
 
-        link = f"{site_url}{item.relative_url}"
-
-        return link
+        return f"{site_url}{item.relative_url}"
 
     def item_pubdate(self, item: ContentItem):
         publish_date = item.metadata.get("publish_date")
@@ -63,4 +61,4 @@ class ContentFeed(Feed):
         return self.site_url
 
     def item_extra_kwargs(self, item: ContentItem):
-        return {"content": Path(item.path).read_text()}
+        return {"content": item.html}
