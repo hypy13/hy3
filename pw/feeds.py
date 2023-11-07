@@ -1,7 +1,6 @@
 import datetime as dt
 from typing import Any
 
-
 import django.utils.timezone as timezone
 from django.contrib.syndication.views import Feed
 from django.utils import feedgenerator
@@ -10,8 +9,10 @@ from coltrane.retriever import ContentItem, get_content_items
 
 
 class CustomFeedGenerator(feedgenerator.Atom1Feed):
-    def item_attributes(self, item: dict[str, Any]) -> dict[Any, Any]:
-        return {"content": item["content"]}
+
+    def add_item_elements(self, handler, item):
+        super().add_item_elements(handler, item)
+        handler.addQuickElement("content", item["content"], attrs={"type": "html"})
 
 
 class ContentFeed(Feed):
