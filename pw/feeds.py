@@ -14,7 +14,7 @@ class CustomFeedGenerator(feedgenerator.Atom1Feed):
         html = item["content"]
         html = html.replace("{% verbatim %}", "")
         html = html.replace("{% endverbatim %}", "")
-        handler.addQuickElement("content", item["content"], attrs={"type": "html"})
+        handler.addQuickElement("content", html, attrs={"type": "html"})
 
 
 class ContentFeed(Feed):
