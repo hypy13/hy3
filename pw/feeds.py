@@ -1,6 +1,6 @@
 import datetime as dt
 from typing import Any
-from pathlib import Path
+
 
 import django.utils.timezone as timezone
 from django.contrib.syndication.views import Feed
