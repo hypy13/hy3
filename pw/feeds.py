@@ -9,9 +9,11 @@ from coltrane.retriever import ContentItem, get_content_items
 
 
 class CustomFeedGenerator(feedgenerator.Atom1Feed):
-
     def add_item_elements(self, handler, item):
         super().add_item_elements(handler, item)
+        html = item["content"]
+        html = html.replace("{% verbatim %}", "")
+        html = html.replace("{% endverbatim %}", "")
         handler.addQuickElement("content", item["content"], attrs={"type": "html"})
 
 
