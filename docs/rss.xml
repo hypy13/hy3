@@ -58,7 +58,7 @@ I hope you'll give it a try and let me know what you think. Thanks for your time
 
 &lt;p&gt;Start by creating a &lt;code&gt;package.json&lt;/code&gt; file, the central configuration file for Node.js-based applications. Although we're not building a Node.js package, this is the method to reference web-types in your PyCharm project. Ensure you have Node.js installed on your computer. If not, I recommend using &lt;a rel="nofollow" href="https://github.com/nvm-sh/nvm"&gt;nvm&lt;/a&gt; to install it. After installing Node.js, you can use &lt;code&gt;npm&lt;/code&gt; (included with all Node.js installations) to initialize a Node.js project and generate the &lt;code&gt;package.json&lt;/code&gt; file.&lt;/p&gt;
 
-&lt;p&gt;{% verbatim %}&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class="codehilite"&gt;
@@ -66,14 +66,14 @@ I hope you'll give it a try and let me know what you think. Thanks for your time
 &lt;span class="w"&gt;  &lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Create &lt;code&gt;htmx.web-types.json&lt;/code&gt; File&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Create a new file named &lt;code&gt;htmx.web-types.json&lt;/code&gt; and copy the htmx &lt;a rel="nofollow" href="https://github.com/bigskysoftware/htmx/blob/master/editors/jetbrains/htmx.web-types.json"&gt;web-types source&lt;/a&gt; into it:&lt;/p&gt;
 
-&lt;p&gt;{% verbatim %}&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class="codehilite"&gt;
@@ -81,14 +81,14 @@ I hope you'll give it a try and let me know what you think. Thanks for your time
 &lt;span class="w"&gt;  &lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Update &lt;code&gt;package.json&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Add a new entry to your &lt;code&gt;package.json&lt;/code&gt; with "web-types" as the key and the path to your &lt;code&gt;htmx.web-types.json&lt;/code&gt; file as the value. Here's an example:&lt;/p&gt;
 
-&lt;p&gt;{% verbatim %}&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;div class="codehilite"&gt;
@@ -98,7 +98,7 @@ I hope you'll give it a try and let me know what you think. Thanks for your time
 &lt;span class="w"&gt;  &lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Enjoy Autocompletion and Documentation&lt;/strong&gt;&lt;/p&gt;
@@ -109,16 +109,16 @@ I hope you'll give it a try and let me know what you think. Thanks for your time
 &lt;h3 id="conclusion"&gt;Conclusion&lt;/h3&gt;
 
 &lt;p&gt;With this simple setup, you can enhance your PyCharm experience and work seamlessly with htmx attributes in your Django projects. Happy coding!&lt;/p&gt;
-</content></entry><entry><title>Easy database and migrations reset during development</title><link href="https://oluwatobi.dev/blog/easy-database-and-migrations-reset-during-development" rel="alternate"/><published>2022-10-30T16:00:00-05:00</published><id>https://oluwatobi.dev/blog/easy-database-and-migrations-reset-during-development</id><summary type="html">Remove all your django migrations files with one commmand.</summary><content type="html">{% verbatim %}
+</content></entry><entry><title>Easy database and migrations reset during development</title><link href="https://oluwatobi.dev/blog/easy-database-and-migrations-reset-during-development" rel="alternate"/><published>2022-10-30T16:00:00-05:00</published><id>https://oluwatobi.dev/blog/easy-database-and-migrations-reset-during-development</id><summary type="html">Remove all your django migrations files with one commmand.</summary><content type="html">
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;touch&lt;span class="w"&gt; &lt;/span&gt;rm_migrations.py
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;Copy the code below to your newly created &lt;code&gt;rm_migrations.py&lt;/code&gt;&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pathlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Path&lt;/span&gt;
 
@@ -144,13 +144,13 @@ I hope you'll give it a try and let me know what you think. Thanks for your time
     &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;Don't forget to update &lt;code&gt;django_apps&lt;/code&gt; in the script to the folder where your django applications are placed. The value you put should be a string representing the path of your django applications folder relative to the folder where the script is placed. I suggest placing the script in the root of your project.&lt;/p&gt;
 
 &lt;p&gt;An example:&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;├──&lt;span class="w"&gt; &lt;/span&gt;my_projects
 │&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;my_apps
@@ -158,40 +158,40 @@ I hope you'll give it a try and let me know what you think. Thanks for your time
 │&lt;span class="w"&gt;   &lt;/span&gt;├──&lt;span class="w"&gt; &lt;/span&gt;rm_migrations.py
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;With the setup describe above, you need to replace &lt;code&gt;django_apps&lt;/code&gt; by &lt;code&gt;my_apps&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Never push this file to production&lt;/strong&gt;, accident happens, but you don't want them to happen on your production code / data.
 Add this line to your&lt;code&gt;.gitignore&lt;/code&gt; file:&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;rm_migrations.py
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;Run the script with:&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python&lt;span class="w"&gt; &lt;/span&gt;rm_migrations.py
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;In the development phase, when the project idea is not fully formed or the product requirements are continually changing, it is common to completely rewrite or modify (in a non-migratable way) your django models, which requires cleaning up and recreating all your migration files. If your project consists of more than a few applications, deleting the files by hand is quite annoying.
 With the above script, you can easily in one command delete all your migration files 😎.&lt;/p&gt;
 
 &lt;p&gt;To reset my database (drop and recreate) I use the command below provided by the &lt;a rel="nofollow" href="https://django-extensions.readthedocs.io/en/latest/reset_db.html"&gt;django-extensions&lt;/a&gt; package.&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;python&lt;span class="w"&gt; &lt;/span&gt;manage.py&lt;span class="w"&gt; &lt;/span&gt;reset_db&lt;span class="w"&gt; &lt;/span&gt;--noinput
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 </content></entry><entry><title>A comprehensive guide to  multi-timezone support in Django</title><link href="https://oluwatobi.dev/blog/a-comprehensive-guide-to-multi-timezone-support-in-django" rel="alternate"/><published>2023-10-11T16:00:00-05:00</published><id>https://oluwatobi.dev/blog/a-comprehensive-guide-to-multi-timezone-support-in-django</id><summary type="html">Discover how to seamlessly manage timezones in Django and empower your applications with user-centric solutions.
 This article is your essential guide to precise and efficient multi-timezone support.</summary><content type="html">&lt;blockquote&gt;
   &lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;: To support multiple timezones in your Django project, you need a way to request your users' specific timezones and create a middleware that uses &lt;code&gt;django.timezone.activate(user_tz)&lt;/code&gt; to enable a specific timezone for a user globally on your site. This ensures that every use of &lt;code&gt;django.timezone.now()&lt;/code&gt; uses the activated timezone. If you prefer reading code directly, see &lt;a rel="nofollow" href="https://github.com/Tobi-De/leerming/blob/main/leerming/profiles/middleware.py"&gt;middleware.py&lt;/a&gt; and &lt;a rel="nofollow" href="https://github.com/Tobi-De/leerming/blob/main/leerming/profiles/models.py"&gt;models.py&lt;/a&gt;.&lt;/p&gt;
@@ -205,14 +205,14 @@ This article is your essential guide to precise and efficient multi-timezone sup
 
 &lt;p&gt;For the longest time (literally until yesterday), I thought that the piece of code below was enough to have timezones fully managed and working in Django:&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# settings.py&lt;/span&gt;
 &lt;span class="n"&gt;TIME_ZONE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;UTC&amp;quot;&lt;/span&gt;  &lt;span class="c1"&gt;# Sometimes, I&amp;#39;d switch this to my primary audience&amp;#39;s timezone.&lt;/span&gt;
 &lt;span class="n"&gt;USE_TZ&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;It turns out I was wrong, or at least I was missing the full picture. There's a bit more work left if you want to consider every user's timezone. Let's explore what's left to do.&lt;/p&gt;
 
@@ -226,14 +226,14 @@ This article is your essential guide to precise and efficient multi-timezone sup
 
 &lt;p&gt;When you have the &lt;code&gt;USE_TZ&lt;/code&gt; setting set to &lt;code&gt;True&lt;/code&gt; in your project settings (as shown in the snippet above), Django will ensure that all the DateTime objects you create are timezone-aware. This is, of course, assuming that you use Django's timezone module to create your dates.&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.utils&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;timezone&lt;/span&gt;
 
 &lt;span class="n"&gt;now&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;timezone&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;now&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;This works if you're not concerned about user-specific timezones, and you're not doing anything fancy with datetime. But what if you are?&lt;/p&gt;
 
@@ -262,7 +262,7 @@ Django, by default, doesn't know a user's timezone. It's not typically available
 
 &lt;p&gt;Here's a model for our users' profiles:&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;zoneinfo&lt;/span&gt;
 
@@ -280,7 +280,7 @@ Django, by default, doesn't know a user's timezone. It's not typically available
     &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;With the model above, we have a simple &lt;code&gt;CharField&lt;/code&gt; to hold the user's timezone and a choices field to render a select using a Django form. You can customize the list of available timezones obtained from the &lt;code&gt;zoneinfo module&lt;/code&gt;. For a simpler user experience, you might choose to filter it by continent or display the city as the label.&lt;/p&gt;
 
@@ -292,7 +292,7 @@ Django, by default, doesn't know a user's timezone. It's not typically available
 
 &lt;p&gt;Now, let's create the middleware to activate the user's timezone:&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;zoneinfo&lt;/span&gt;
 
@@ -318,11 +318,11 @@ Django, by default, doesn't know a user's timezone. It's not typically available
         &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_response&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;This middleware activates the user's timezone if they're authenticated and have a profile. In other cases, we call &lt;code&gt;deactivate&lt;/code&gt;, which sets the timezone to the default. While this last step is not strictly required, that's how the Django docs suggest doing it, so let's stick with that. To complete the setup, don't forget to register your middleware in your settings within the &lt;code&gt;MIDDLEWARE&lt;/code&gt; list.&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;MIDDLEWARE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
      &lt;span class="o"&gt;...&lt;/span&gt;
@@ -330,7 +330,7 @@ Django, by default, doesn't know a user's timezone. It's not typically available
 &lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;With this setup, we've made sure that every call to &lt;code&gt;timezone.now&lt;/code&gt; will takes the user's specific timezone into account. When datetime objects are saved to the database, they are automatically converted to UTC. For example, in my case (UTC+1), if I input "6:00 pm" on the UI to record a time, it will be saved in the database as &lt;code&gt;5:00 pm&lt;/code&gt; (though it will still be rendered as "6:00 pm" to me on the frontend).&lt;/p&gt;
 
@@ -338,7 +338,7 @@ Django, by default, doesn't know a user's timezone. It's not typically available
 
 &lt;p&gt;If you need to create a timezone-aware datetime object manually, for example by combining a date and time, here's how you do it:&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;dt&lt;/span&gt;
 
@@ -346,11 +346,11 @@ Django, by default, doesn't know a user's timezone. It's not typically available
 &lt;span class="n"&gt;aware_datetime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;timezone&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;make_aware&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;naive_datetime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;zoneinfo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ZoneInfo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;user_timezone&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;The code below will generate a new migration every time you run &lt;code&gt;python manage.py makemigrations&lt;/code&gt;:&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;TIMEZONES_CHOICES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[(&lt;/span&gt;&lt;span class="n"&gt;tz&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tz&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;tz&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;zoneinfo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;available_timezones&lt;/span&gt;&lt;span class="p"&gt;()]&lt;/span&gt;
 
@@ -363,11 +363,11 @@ Django, by default, doesn't know a user's timezone. It's not typically available
       &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;The culprit line is &lt;code&gt;choices=TIMEZONES_CHOICES&lt;/code&gt;. A simple fix is to update the migrations file to use the  &lt;code&gt;TIMEZONES_CHOICES&lt;/code&gt; constant directly:&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Migration&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;migrations&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Migration&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="o"&gt;...&lt;/span&gt;
@@ -386,7 +386,7 @@ Django, by default, doesn't know a user's timezone. It's not typically available
     &lt;span class="p"&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;h3 id="conclusion"&gt;Conclusion&lt;/h3&gt;
 
@@ -418,13 +418,13 @@ I'm promoting &lt;a rel="nofollow" href="https://github.com/pydanny/cookiecutter
 
 &lt;p&gt;If you are already convinced at this point, just run the two commands below, and you are done 😀.&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cookiecutter&amp;gt;=1.7.0&amp;quot;&lt;/span&gt;
 cookiecutter&lt;span class="w"&gt; &lt;/span&gt;https://github.com/cookiecutter/cookiecutter-django
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;Read on for a closer look at all the options available and why you might want to ignore some of them to simplify the initial project generated a bit.&lt;/p&gt;
 
@@ -438,19 +438,19 @@ cookiecutter&lt;span class="w"&gt; &lt;/span&gt;https://github.com/cookiecutter/
 
 &lt;h3 id="installation"&gt;Installation&lt;/h3&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pip&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;cookiecutter&amp;gt;=1.7.0&amp;quot;&lt;/span&gt;
 cookiecutter&lt;span class="w"&gt; &lt;/span&gt;https://github.com/cookiecutter/cookiecutter-django
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;h3 id="project-metadata"&gt;Project metadata&lt;/h3&gt;
 
 &lt;p&gt;This section is for basic project information such as name, description, authors, etc.&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;project_name&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;My&lt;span class="w"&gt; &lt;/span&gt;Awesome&lt;span class="w"&gt; &lt;/span&gt;Project&lt;span class="o"&gt;]&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;Ushopify
 project_slug&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;ushopify&lt;span class="o"&gt;]&lt;/span&gt;:
@@ -468,54 +468,54 @@ Select&lt;span class="w"&gt; &lt;/span&gt;open_source_license:
 Choose&lt;span class="w"&gt; &lt;/span&gt;from&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;A source code license is a legal text that tells people what they may do with the source code, for example, edit it, use it, share it with others freely, etc. More information about software licensing &lt;a rel="nofollow" href="https://en.wikipedia.org/wiki/Software_license"&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;timezone&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;UTC&lt;span class="o"&gt;]&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;US/Pacific
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;I chose a completely random location. You can get the &lt;a rel="nofollow" href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"&gt;full list of timezones&lt;/a&gt; or open your python shell (ever heard of &lt;a rel="nofollow" href="https://bpython-interpreter.org/"&gt;bpython&lt;/a&gt;?) and type this code:&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;pytz&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;all_timezones&lt;/span&gt;
 &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;tz&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;all_timezones&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
       &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tz&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;h3 id="editor-and-os"&gt;Editor and OS&lt;/h3&gt;
 
 &lt;p&gt;I'm on linux, so &lt;strong&gt;n&lt;/strong&gt; for me.&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;windows&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;n&lt;span class="o"&gt;]&lt;/span&gt;:
 use_pycharm&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;n&lt;span class="o"&gt;]&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;y
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;If you are using &lt;a rel="nofollow" href="https://www.jetbrains.com/pycharm/"&gt;pycharm&lt;/a&gt;, the cookiecutter will create &lt;code&gt;runserver&lt;/code&gt;, &lt;code&gt;migrate&lt;/code&gt; and more run configurations automatically for you, neat 😎.&lt;/p&gt;
 
 &lt;h3 id="docker"&gt;Docker&lt;/h3&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;use_docker&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;n&lt;span class="o"&gt;]&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;n
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;Docker is an open source platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure, so you can deliver software quickly. Enter &lt;strong&gt;y&lt;/strong&gt; and the cookiecutter will automatically create docker and docker-compose files to help you run your project locally and even deploy it with less effort. It's a great start to help you deploy your project, but I think it is necessary to have a minimum of experience with docker to understand how to correctly use the generated files. If you want more information about docker, read &lt;a rel="nofollow" href="https://www.docker.com/"&gt;this&lt;/a&gt;.&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Select&lt;span class="w"&gt; &lt;/span&gt;postgresql_version:
 &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;14&lt;/span&gt;
@@ -526,13 +526,13 @@ use_pycharm&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&
 Choose&lt;span class="w"&gt; &lt;/span&gt;from&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;Set the version of postgresql to use in the Dockerfile for production. This only matters if you enter &lt;em&gt;y&lt;/em&gt; at the &lt;em&gt;use_docker&lt;/em&gt; option. As I don't often use the docker and docker compose configuration provided by the cookiecutter (I create my own files), it doesn't really matter to me.&lt;/p&gt;
 
 &lt;h3 id="cloud-services"&gt;Cloud services&lt;/h3&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;Select&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;cloud_provider&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
 &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;AWS&lt;/span&gt;
@@ -541,12 +541,12 @@ Choose&lt;span class="w"&gt; &lt;/span&gt;from&lt;span class="w"&gt; &lt;/span&g
 &lt;span class="n"&gt;Choose&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;This is about static (HTML, CSS, static images like background images) and media files (file upload by you or your users like profile picture for example) storages. If you choose &lt;strong&gt;AWS&lt;/strong&gt; (amazon web service) or &lt;strong&gt;GCP&lt;/strong&gt; (google cloud provider), your project will be configured for these providers to handle static and media files in production. If you choose &lt;strong&gt;None&lt;/strong&gt;, then media files will not work by default (you will have to set it up yourself) in production and static files will work only if you choose &lt;strong&gt;y&lt;/strong&gt; on the option &lt;em&gt;use_whitenoise&lt;/em&gt;.
 For a step-by-step guide on how to configure static and media files serving yourself using &lt;strong&gt;AWS&lt;/strong&gt;, watch &lt;a rel="nofollow" href="https://www.youtube.com/watch?v=kt3ZtW9MXhw&amp;list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&amp;index=16"&gt;this&lt;/a&gt;.&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;Select&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;mail_service&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;
 &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Mailgun&lt;/span&gt;
@@ -561,18 +561,18 @@ For a step-by-step guide on how to configure static and media files serving your
 &lt;span class="n"&gt;Choose&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;I usually go with &lt;a rel="nofollow" href="https://aws.amazon.com/ses/"&gt;amazon SES&lt;/a&gt; because it is the easiest to set up for me, but do what you want based on your experience. For a simple setup based on &lt;a rel="nofollow" href="https://en.wikipedia.org/wiki/Simple_Mail_Transfer_Protocol"&gt;SMTP&lt;/a&gt; settings, choose &lt;strong&gt;9&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;h3 id="async-django"&gt;Async django&lt;/h3&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;use_async&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;n&lt;span class="o"&gt;]&lt;/span&gt;:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;blockquote&gt;
   &lt;p&gt;Indicates whether the project should use web sockets with Uvicorn + Gunicorn.&lt;/p&gt;
@@ -584,19 +584,19 @@ If you want to know more about websocket in django, read &lt;a rel="nofollow" hr
 
 &lt;h3 id="django-rest-framework"&gt;Django rest framework&lt;/h3&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;use_drf&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;n&lt;span class="o"&gt;]&lt;/span&gt;:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;In case you are building a json based API, then choose &lt;strong&gt;y&lt;/strong&gt;.
 More info on Dango Rest framework &lt;a rel="nofollow" href="https://www.django-rest-framework.org/"&gt;here&lt;/a&gt;.  DRF is the go-to framework to build json-based APIs with django. What I call a json-based API here most people would call it a REST API, but &lt;a rel="nofollow" href="https://htmx.org/essays/how-did-rest-come-to-mean-the-opposite-of-rest/"&gt;here's why&lt;/a&gt; they're wrong.&lt;/p&gt;
 
 &lt;h3 id="frontend"&gt;Frontend&lt;/h3&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Select&lt;span class="w"&gt; &lt;/span&gt;frontend_pipeline:
 &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;None
@@ -605,7 +605,7 @@ More info on Dango Rest framework &lt;a rel="nofollow" href="https://www.django-
 Choose&lt;span class="w"&gt; &lt;/span&gt;from&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;The tools suggested here are for minification, transpilation, etc of static assets (CSS, JS, etc). I don't use any of them, so my answer is always the default, &lt;strong&gt;None&lt;/strong&gt;.
 If you want to know more about these tools, check out their official documentation:&lt;/p&gt;
@@ -617,12 +617,12 @@ If you want to know more about these tools, check out their official documentati
 
 &lt;h3 id="celery"&gt;Celery&lt;/h3&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;use_celery&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;n&lt;span class="o"&gt;]&lt;/span&gt;:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;&lt;a rel="nofollow" href="https://github.com/celery/celery"&gt;Celery&lt;/a&gt; is an open source asynchronous task queue or job queue which is based on distributed message passing. While it supports scheduling, its focus is on operations in real time. That was the wikipedia definition 😅.
 Celery is used to handle asynchronous tasks (background tasks) and scheduled tasks (things that should happen in the future).
@@ -631,45 +631,45 @@ You can read my article on [[Handling background tasks in django]] to see how I 
 
 &lt;h3 id="local-email-server-setup"&gt;Local email server setup&lt;/h3&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;use_mailhog&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;n&lt;span class="o"&gt;]&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;y
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;&lt;a rel="nofollow" href="https://github.com/mailhog/MailHog"&gt;MailHog&lt;/a&gt; is an email testing tool for developers. The &lt;a rel="nofollow" href="https://docs.djangoproject.com/en/4.1/topics/email/#console-backend"&gt;django console backend&lt;/a&gt; is set up for local development if you choose &lt;strong&gt;n&lt;/strong&gt; but mailhog gives you a nice graphical user interface (GUI) when you test your email delivery locally.&lt;/p&gt;
 
 &lt;h3 id="sentry-production-error-tracking"&gt;Sentry - production error tracking&lt;/h3&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;use_sentry&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;n&lt;span class="o"&gt;]&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;y
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;&lt;a rel="nofollow" href="https://github.com/getsentry/sentry"&gt;Sentry&lt;/a&gt; is an error monitoring and tracking system. I recommend you always choose &lt;strong&gt;y&lt;/strong&gt; if you know your app is going in production, it will avoid you the hassle of always switching your &lt;strong&gt;DEBUG&lt;/strong&gt; environment variable value to see errors when they happened in production. It is very easy to set up, just follow the &lt;a rel="nofollow" href="https://docs.sentry.io/platforms/python/guides/django/"&gt;official guide&lt;/a&gt; If you want to configure it manually. If you choose &lt;strong&gt;y&lt;/strong&gt; the only thing you need is a &lt;strong&gt;Sentry DSN&lt;/strong&gt; key that you can get by creating a django app on the official &lt;a rel="nofollow" href="https://sentry.io"&gt;web platform&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id="whitenoise"&gt;Whitenoise&lt;/h3&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;use_whitenoise&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;n&lt;span class="o"&gt;]&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;y
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;&lt;a rel="nofollow" href="https://github.com/evansd/whitenoise"&gt;Whitenoise&lt;/a&gt; serves your static files in production and &lt;a rel="nofollow" href="http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development"&gt;locally&lt;/a&gt; if you want it to.  I usually choose &lt;strong&gt;y&lt;/strong&gt; because having the same setup for production and local development can help mitigate surprises on your production environment.&lt;/p&gt;
 
 &lt;h3 id="heroku"&gt;Heroku&lt;/h3&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;use_heroku&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;n&lt;span class="o"&gt;]&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;y
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;Heroku is a hosting platform for web applications. The cookiecutter will add the necessary requirements for your project to work on heroku, these requirements being:
 - A requirements.txt file with all your project production requirements
@@ -678,7 +678,7 @@ If you are using a similar deployment method based on a procfile like [[Host you
 
 &lt;h3 id="continuous-integration-ci"&gt;Continuous Integration (CI)&lt;/h3&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;Select&lt;span class="w"&gt; &lt;/span&gt;ci_tool:
 &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;None
@@ -688,55 +688,55 @@ If you are using a similar deployment method based on a procfile like [[Host you
 Choose&lt;span class="w"&gt; &lt;/span&gt;from&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;Select an option other than the default if you are planning to set up a CI/CD pipeline for your project. More info on how to set up CI/CD for a django project &lt;a rel="nofollow" href="https://buddy.works/docs/quickstart/django"&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id="environment-variables"&gt;Environment variables&lt;/h3&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;keep_local_envs_in_vcs&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;y&lt;span class="o"&gt;]&lt;/span&gt;:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;If you typed &lt;strong&gt;y&lt;/strong&gt; on the &lt;strong&gt;use_docker&lt;/strong&gt; or &lt;strong&gt;use_heroku&lt;/strong&gt; option, then your project will have a &lt;code&gt;.envs&lt;/code&gt; folder with &lt;code&gt;.local&lt;/code&gt; and &lt;code&gt;.production&lt;/code&gt; subdirectories.
 If on the current option you type &lt;strong&gt;n&lt;/strong&gt;, both folder will be kept out of your version control system (VCS), if you choose the default value your `.local will be tracked by your VCS.&lt;/p&gt;
 
 &lt;h3 id="cookiecutter-debug"&gt;Cookiecutter debug&lt;/h3&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;debug&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;n&lt;span class="o"&gt;]&lt;/span&gt;:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;This option is only for Cookiecutter Django developers only, choose the default value.&lt;/p&gt;
 
 &lt;p&gt;If all went well, you will get this message.&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;SUCCESS&lt;span class="o"&gt;]&lt;/span&gt;:&lt;span class="w"&gt; &lt;/span&gt;Project&lt;span class="w"&gt; &lt;/span&gt;initialized,&lt;span class="w"&gt; &lt;/span&gt;keep&lt;span class="w"&gt; &lt;/span&gt;up&lt;span class="w"&gt; &lt;/span&gt;the&lt;span class="w"&gt; &lt;/span&gt;good&lt;span class="w"&gt; &lt;/span&gt;work!
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;h2 id="structures-of-the-project"&gt;Structures of the project&lt;/h2&gt;
 
 &lt;p&gt;Let's take a quick look at the generated project. I use &lt;a rel="nofollow" href="https://www.tecmint.com/linux-tree-command-examples/"&gt;tree&lt;/a&gt; to get a two-level tree view generated project.&lt;/p&gt;
 
-{% verbatim %}
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;cd&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;ushopify
 tree&lt;span class="w"&gt; &lt;/span&gt;-L&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
 
-{% verbatim %}
+
+
 &lt;div class="codehilite"&gt;
 &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;├──&lt;span class="w"&gt; &lt;/span&gt;CONTRIBUTORS.txt
 ├──&lt;span class="w"&gt; &lt;/span&gt;LICENSE
@@ -787,7 +787,7 @@ tree&lt;span class="w"&gt; &lt;/span&gt;-L&lt;span class="w"&gt; &lt;/span&gt;&l
 &lt;span class="m"&gt;13&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;directories,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;32&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;files
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-{% endverbatim %}
+
 
 &lt;p&gt;At the root of your project should have these directories:&lt;/p&gt;
 
