@@ -8,14 +8,11 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-coltrane = { git = "https://github.com/Tobi-De/coltrane.git" }
 django-htmx = "^1.17.0"
 mistune = "^3.0.2"
 pytailwindcss = "^0.2.0"
 poethepoet = "^0.24.2"
-minestrone = "^0.7.0"
-python-frontmatter = "^1.0.0"
-pygments = "^2.16.1"
+coltrane = {extras = ["mistune"], version = "^0.24.0"}
 
 
 [tool.poetry.group.dev.dependencies]
