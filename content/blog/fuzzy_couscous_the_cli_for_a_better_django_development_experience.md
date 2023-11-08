@@ -6,9 +6,8 @@ slug: fuzzy_couscous_the_cli_for_a_better_django_development_experience
 tags:
  - python
  - django
- - projectstarter
+ - project-template
  - cookiecutter
- - opensource
 description: >
  A cli tool to bootstrap your django projects and enhance your development experience.
 publish_date: 2023-02-27
