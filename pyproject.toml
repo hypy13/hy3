@@ -8,11 +8,11 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-django-htmx = "^1.17.0"
+django-htmx = "^1.17.2"
 mistune = "^3.0.2"
 pytailwindcss = "^0.2.0"
-poethepoet = "^0.24.2"
-coltrane = {extras = ["mistune"], version = "^0.24.0"}
+poethepoet = "^0.24.4"
+coltrane = {extras = ["mistune"], version = "^0.25.0"}
 
 
 [tool.poetry.group.dev.dependencies]
