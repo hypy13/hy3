@@ -80,7 +80,7 @@ def add_project(args):
     with open(project_file_path, "r") as file:
         projects = json.load(file)
 
-    web_url = input("Enter web url: ") or ""
+    web_url = github_project.get("homepage") or input("Enter web url: ")
     featured = input("Is this project featured? (y/n): ") == "y"
     stack = input("Enter stack: ")
 

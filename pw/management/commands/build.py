@@ -6,7 +6,6 @@ from coltrane.management.commands.build import Command as BuildCommand
 
 
 class Command(BuildCommand):
-
     def _generate_rss(self) -> None:
         assert self.output_directory
 

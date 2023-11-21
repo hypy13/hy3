@@ -5,5 +5,5 @@ from django.urls import path
 from .feeds import ContentFeed
 
 urlpatterns = [
-     path("rss.xml", ContentFeed()),
-]+ base_urlpatterns
+    path("rss.xml", ContentFeed()),
+] + base_urlpatterns
