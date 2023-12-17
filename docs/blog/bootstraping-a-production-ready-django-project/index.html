@@ -240,8 +240,8 @@ Choose<span class="w"> </span>from<span class="w"> </span><span class="m">1</spa
 </div>
 
 
-<p>This is about static (HTML, CSS, static images like background images) and media files (file upload by you or your users like profile picture for example) storages. If you choose <strong>AWS</strong> (amazon web service) or <strong>GCP</strong> (google cloud provider), your project will be configured for these providers to handle static and media files in production. If you choose <strong>None</strong>, then media files will not work by default (you will have to set it up yourself) in production and static files will work only if you choose <strong>y</strong> on the option <em>use_whitenoise</em>.
-For a step-by-step guide on how to configure static and media files serving yourself using <strong>AWS</strong>, watch <a rel="nofollow" href="https://www.youtube.com/watch?v=kt3ZtW9MXhw&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=16">this</a>.</p>
+<p>This is about static (HTML, CSS, static images like background images) and media files (file upload by you or your users like profile picture for example) storages. If you choose <strong>AWS<em>* (amazon web service) or </em><em>GCP</em>* (google cloud provider), your project will be configured for these providers to handle static and media files in production. If you choose <em>*None</em><em>, then media files will not work by default (you will have to set it up yourself) in production and static files will work only if you choose </em><em>y</em>* on the option <em>use_whitenoise</em>.
+For a step-by-step guide on how to configure static and media files serving yourself using **AWS</strong>, watch <a rel="nofollow" href="https://www.youtube.com/watch?v=kt3ZtW9MXhw&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p&index=16">this</a>.</p>
 
 
 <div class="codehilite">
@@ -346,7 +346,7 @@ You can read my article on <a href=/handling-background-tasks-in-django>Handling
 </div>
 
 
-<p><a rel="nofollow" href="https://github.com/getsentry/sentry">Sentry</a> is an error monitoring and tracking system. I recommend you always choose <strong>y</strong> if you know your app is going in production, it will avoid you the hassle of always switching your <strong>DEBUG</strong> environment variable value to see errors when they happened in production. It is very easy to set up, just follow the <a rel="nofollow" href="https://docs.sentry.io/platforms/python/guides/django/">official guide</a> If you want to configure it manually. If you choose <strong>y</strong> the only thing you need is a <strong>Sentry DSN</strong> key that you can get by creating a django app on the official <a rel="nofollow" href="https://sentry.io">web platform</a>.</p>
+<p><a rel="nofollow" href="https://github.com/getsentry/sentry">Sentry</a> is an error monitoring and tracking system. I recommend you always choose <strong>y<em>* if you know your app is going in production, it will avoid you the hassle of always switching your </em><em>DEBUG</em>* environment variable value to see errors when they happened in production. It is very easy to set up, just follow the <a rel="nofollow" href="https://docs.sentry.io/platforms/python/guides/django/">official guide</a> If you want to configure it manually. If you choose <em>*y</em>* the only thing you need is a **Sentry DSN</strong> key that you can get by creating a django app on the official <a rel="nofollow" href="https://sentry.io">web platform</a>.</p>
 
 <h3 id="whitenoise">Whitenoise</h3>
 
@@ -398,8 +398,8 @@ Choose<span class="w"> </span>from<span class="w"> </span><span class="m">1</spa
 </div>
 
 
-<p>If you typed <strong>y</strong> on the <strong>use_docker</strong> or <strong>use_heroku</strong> option, then your project will have a <code>.envs</code> folder with <code>.local</code> and <code>.production</code> subdirectories.
-If on the current option you type <strong>n</strong>, both folder will be kept out of your version control system (VCS), if you choose the default value your `.local will be tracked by your VCS.</p>
+<p>If you typed <strong>y<em>* on the </em><em>use_docker</em>* or <em>*use_heroku</em>* option, then your project will have a <code>.envs</code> folder with <code>.local</code> and <code>.production</code> subdirectories.
+If on the current option you type **n</strong>, both folder will be kept out of your version control system (VCS), if you choose the default value your `.local will be tracked by your VCS.</p>
 
 <h3 id="cookiecutter-debug">Cookiecutter debug</h3>
 
