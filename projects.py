@@ -104,7 +104,7 @@ def add_project(args):
     if dry_run:
         from pprint import pprint
 
-        pprint(projects)
+        pprint(project)
         exit(0)
 
     with open(project_file_path, "w") as file:
