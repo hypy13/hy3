@@ -74,7 +74,7 @@ def add_project(args):
     try:
         github_project = github_api_request(f"repos/Tobi-De/{project_name}")
     except urllib.error.HTTPError:
-        print(f"Project {project_name} does not exist")
+        print(f"Project {project_name} does not exist or maybe GH_API_TOKEN is not set")
         exit(1)
 
     with open(project_file_path, "r") as file:
