@@ -130,6 +130,10 @@ def main():
     args = parser.parse_args()
     if hasattr(args, "func"):
         args.func(args)
+    else:
+        print("possible commands")
+        print("python -m projects add-project <project_name> --dry-run")
+        print("python -m projects update-dates")
 
 
 if __name__ == "__main__":
