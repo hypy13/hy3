@@ -81,6 +81,8 @@ def add_project(args):
         projects = json.load(file)
 
     web_url = github_project.get("homepage") or input("Enter web url: ")
+    if not web_url:
+        web_url = github_project["html_url"]
     featured = input("Is this project featured? (y/n): ") == "y"
     stack = input("Enter stack: ")
 
