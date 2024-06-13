@@ -16,5 +16,6 @@ def get_projects() -> list[dict[str, str]]:
 
     projects.sort(key=lambda p: p.get("last_updated"), reverse=True)
     projects.sort(key=lambda p: p.get("featured"), reverse=True)
+    projects.sort(key=lambda p: p.get("priority", 0), reverse=True)
 
     return projects
