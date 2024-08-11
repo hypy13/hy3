@@ -34,3 +34,6 @@ wsgi = initialize()
 
 if __name__ == "__main__":
     execute_from_command_line()
+
+# TODO: push pub_date to coltrane itself
+# TODO: Push change to override app order so that user apps are prioritized
