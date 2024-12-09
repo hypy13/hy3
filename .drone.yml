@@ -1,0 +1,38 @@
+kind: pipeline
+type: exec
+name: dockercompose
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: "run docker compose"
+    commands:
+      - DOCKER_BUILDKIT=1 COMPOSE_DOCKER_CLI_BUILD=1 docker compose up -d --build
+
+  - name: "copy nginx conf"
+    commands:
+      - cp -r nginx/* /docker/nginx/data/conf.d/
+
+  - name: "check nginx server config"
+    commands:
+      # Check the Nginx configuration inside the container
+      - |
+        if docker exec nginx nginx -t -c /etc/nginx/nginx.conf; then
+          echo "Nginx configuration is OK."
+        else
+          echo "Nginx configuration test failed. Stopping pipeline."
+          docker exec nginx rm /etc/nginx/conf.d/hy3.conf
+          exit 1  # Exit if the configuration check fails
+        fi
+
+  - name: "reload nginx config"
+    commands:
+      - docker exec nginx nginx -s reload
+
+trigger:
+  branch:
+    - master
+  event:
+    - push

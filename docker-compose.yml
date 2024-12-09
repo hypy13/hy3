@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  hy3_web:
+    container_name: hy3_web
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    command: gunicorn -b 0.0.0.0:8000 app:wsgi
+    ports:
+      - "4092:8000"
+
