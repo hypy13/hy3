@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 from typing import Dict, Any
 
-from django.core.management import execute_from_command_line
 from coltrane import _get_base_dir, _merge_settings, _configure_settings
-from dotenv import load_dotenv
-
 from django import setup as django_setup
 from django.core.handlers.wsgi import WSGIHandler
+from django.core.management import execute_from_command_line
+from dotenv import load_dotenv
 
 
 def initialize(
