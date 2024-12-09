@@ -22,6 +22,7 @@ def initialize(
     django_settings = _merge_settings(base_dir, django_settings)
     django_settings["INSTALLED_APPS"].insert(0, "pw")
     django_settings["ROOT_URLCONF"] = "pw.urls"
+    django_settings["ALLOWED_HOSTS"] = "hy3.ir"
     _configure_settings(django_settings)
 
     django_setup()
