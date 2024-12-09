@@ -12,13 +12,15 @@ ENV PYTHONUNBUFFERED 1
 RUN apk update && \
     apk add git gcc python3-dev musl-dev jpeg-dev zlib-dev freetype-dev
 
+COPY .env.server .env
+
 # upgrade pip
 RUN pip install --upgrade pip
 
 # copy requirements and install dependencies
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-COPY .env.server .env
+
 
 # copy the application code
 COPY . .
