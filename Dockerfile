@@ -18,6 +18,7 @@ RUN pip install --upgrade pip
 # copy requirements and install dependencies
 COPY requirements.txt .
 RUN pip install -r requirements.txt
+COPY .env.server .env
 
 # copy the application code
 COPY . .
