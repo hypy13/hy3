@@ -1,14 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" data-theme="dark" class="bg-base-200">
+<html lang="en" data-theme="" class="bg-base-200">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Tobi DEGNON">
     {% block header_meta %}
-        <title>Tobi DEGNON</title>
-        <meta name="description" content="Tobi DEGNON online portfolio and web developer blog.">
-        <meta name="keywords" content="developer, backend, python, django, htmx, fastapi, database, web, blog">
+        <title>Hossein Yaghoubi | Personal Website</title>
+        <meta name="description" content="Hossein Yaghoubi online portfolio and web developer blog.">
+        <meta name="keywords" content="developer, backend, python, django, daisyui, fastapi, database, web, blog">
     {% endblock header_meta %}
     <link rel="stylesheet" href="{% static "css/output.css" %}">
     <link rel="stylesheet" href="{% static "css/code.css" %}">
@@ -17,7 +17,6 @@
     {#    <script type="module" src="https://unpkg.com/giscus?module"></script>#}
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
     <script defer data-domain="oluwatobi.dev" src="https://plausible.service.dotfm.me/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
     <!-- favicon-->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicons/favicon-32x32.png' %}">
@@ -25,7 +24,7 @@
     <link rel="manifest" href="{% static 'favicons/site.webmanifest' %}">
     <link rel="mask-icon" href="{% static 'favicons/safari-pinned-tab.svg' %}" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
-
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 
 </head>
 <body class="container mx-auto" hx-boost="true" hx-ext="head-support">
@@ -72,9 +71,9 @@
         </div>
 
         <div class="">
-            <label class="swap swap-rotate ">
+            <label  class="swap swap-rotate ">
                 <!-- this hidden checkbox controls the state -->
-                <input type="checkbox" class="theme-controller hidden" value="halloween"/>
+                <input data-toggle-theme="halloween,cupcake" data-act-class="ACTIVECLASS" type="checkbox" class="theme-controller hidden" value="hi"/>
 
                 <!-- sun icon -->
                 <svg
@@ -160,5 +159,6 @@
         </div>
     </div>
 </footer>
+
 </body>
 </html>
