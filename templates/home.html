@@ -75,7 +75,7 @@
         <div
             class="flex flex-col mx-3 items-center md:items-stretch lg:mx-0 lg:flex-row lg:justify-center gap-5 overflow-hidden sm:gap-8">
             {% for post in posts %}
-            <a href="/{{ post.slug }}/"
+            <a hx-target="#main-content" hx-push-url="true" href="/{{ post.slug }}/"
                 class="block p-6 rounded-lg border shadow-md border-zinc-700 hover:bg-base-300 lg:max-w-sm">
                 <time class="relative z-10 order-first mb-3 flex items-center text-sm text-base-content/70 pl-3.5"
                     datetime="2022-09-05">

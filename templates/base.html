@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" data-theme="" class="bg-base-200">
+<html lang="en" data-theme="halloween">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +27,7 @@
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 
 </head>
-<body class="container mx-auto" hx-boost="true" hx-ext="head-support">
+<body class="container mx-auto">
 <header>
     <nav class="md:flex md:justify-center items-end mt-4" x-data="{ isOpen: true, path: '{{ request.path }}'}">
         <div class="flex justify-end p-4 md:hidden">
@@ -46,24 +46,24 @@
         <div x-transition x-show="isOpen" class="md:block grow mt-4">
             <ul class="flex justify-center w-max  mx-auto flex-col md:flex-row gap-2 border-0 p-1 border-zinc-700 divide-y divide-zinc-100/5 md:divide-none rounded-md md:rounded-full bg-zinc-800/90 text-neutral-content text-sm font-medium">
                 <li>
-                    <a href="/"
+                    <a hx-get="/" hx-target="#main-content" hx-push-url="true" href="/"
                        :class="path == '/' ? 'text-teal-400' : ''"
                        class="relative block px-3 py-2 transition hover:text-teal-400"
                     >Home</a>
                 </li>
                 <li>
-                    <a href="/projects/"
+                    <a  hx-get="/projects/" hx-target="#main-content" hx-push-url="true" href="/projects/"
                        :class="path.includes('projects') ? 'text-teal-400' : ''"
                        class="relative block px-3 py-2 transition hover:text-teal-400">Projects
                     </a>
                 </li>
                 <li>
-                    <a href="/blog/"
+                    <a  hx-get="/blog/" hx-target="#main-content" hx-push-url="true" href="/blog/"
                        :class="path.includes('blog') ? 'text-teal-400' : ''"
                        class="relative block px-3 py-2 transition hover:text-teal-400">Blog</a>
                 </li>
                 <li>
-                    <a href="/colophon/"
+                    <a  hx-get="/colophon/" hx-target="#main-content" hx-push-url="true" href="/colophon/"
                        :class="path.includes('colophon') ? 'text-teal-400' : ''"
                        class="relative block px-3 py-2 transition hover:text-teal-400">Colophon</a>
                 </li>
@@ -73,7 +73,7 @@
         <div class="">
             <label  class="swap swap-rotate ">
                 <!-- this hidden checkbox controls the state -->
-                <input data-toggle-theme="halloween,cupcake" data-act-class="ACTIVECLASS" type="checkbox" class="theme-controller hidden" value="hi"/>
+                <input data-toggle-theme="halloween,light" data-act-class="ACTIVECLASS" type="checkbox" class="theme-controller hidden" value="light"/>
 
                 <!-- sun icon -->
                 <svg
@@ -97,8 +97,10 @@
     </nav>
 </header>
 
-{% block content %}
-{% endblock content %}
+<div id="main-content" hx-boost="true" hx-target="#content" hx-swap-oob="true">
+    {% block content %}
+    {% endblock content %}
+</div>
 
 <footer class="mt-32">
     <div class="sm:px-8">
