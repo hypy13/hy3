@@ -64,12 +64,12 @@
                                             <span class="text-zinc-500">{{ post|readtime_from_post }}</span>
                                         </div>
                                         <h2 class="mb-2 text-2xl font-bold tracking-tight hover:text-teal-500">
-                                            <a href="/{{ post.slug }}/">{{ post.title }}</a></h2>
+                                            <a hx-target="#main-content" hx-push-url="true" href="/{{ post.slug }}/">{{ post.title }}</a></h2>
                                         <p class="mb-5 text-base text-content">{{ post.description }}</p>
                                         <div class="flex items-center justify-between">
                                         <span class="text-sm text-zinc-500">Published <time
                                                 datetime="{{ post.publish_date.isoformat }}">{{ post.publish_date }}</time></span>
-                                            <a
+                                            <a hx-target="#main-content" hx-push-url="true"
                                                     class="inline-flex items-center font-medium text-teal-500 hover:underline"
                                                     href="/{{ post.slug }}/">Read more
                                                 <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20"
