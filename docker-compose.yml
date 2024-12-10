@@ -13,3 +13,6 @@ services:
       - "8094:8000"
     env_file:
       - .env.server
+    volumes:
+      - /docker/projects/hy3/static:/app/static
+
